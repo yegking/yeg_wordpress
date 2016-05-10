@@ -4,18 +4,9 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory')//获取路径?>/tougao.css" />
 
 <script type="text/javascript">
-			$(document).ready(function() {
-				$("div.img-item").mouseover(function() {
-					$(this).children(".title-item").show();
-					$(this).children(".info-item").show();
-				}).mouseout(function() {
-					$(this).children(".title-item").hide();
-					$(this).children(".info-item").hide();
-				});
-				$(".tags a").corner('10px');
-				$(".brands a").corner('12px');
-			});
-		
+
+
+
 //显示灰色 jQuery 遮罩层 
 function showBg(){ 
 var bh = $("body").height(); 
@@ -38,11 +29,26 @@ $("#dialog").show();
 function closeBg() { 
 $("#fullbg,#dialog").hide(); 
 } 
+
+			$(document).ready(function() {
+				$("div.img-item").mouseover(function() {
+					$(this).children(".title-item").show();
+					$(this).children(".info-item").show();
+				}).mouseout(function() {
+					$(this).children(".title-item").hide();
+					$(this).children(".info-item").hide();
+				});
+				$(".tags a").corner('10px');
+				$(".brands a").corner('12px');
+			});
+		
+
+	
 </script>
 
 <div id="content">
 <div id="m_left">
-
+<input type="text" value=" <?php wp_dropdown_categories('hide_empty=0&id=tougaocategorg&show_count=1&hierarchical=1');?>">
 <!--这块php主要负责显示顶部图片-->
    <?php if (get_option('strive_slidebar') == 'Display') { //侧边栏?>
   <div class="topad"> <a href=" <?php echo stripslashes(get_option('strive_adurl')); //stripslashes删除由 函数添加的反斜杠，strive_adurl为需要在首页顶部显示的广告链接地址?>" target="_blank"> <img src="<?php echo stripslashes(get_option('strive_adimg')); //首页顶部显示的广告图片地址?>" width="720px"/></a> </div>

@@ -11,7 +11,9 @@
 <script type="text/javascript" src="<?php bloginfo('template_directory')?>/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory')?>/js/main.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory')?>/js/jquery.corner.js"></script>
+
 <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+
 
 <?php if ( is_singular() ){ //当前显示的是不是一条单独的post所形成的页面?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/images/lightbox/pirobox.css" target="_blank" />
@@ -65,9 +67,6 @@
     })(window,document);
 </script>
 <script src="http://l.tbcdn.cn/apps/top/x/sdk.js?appkey=21784812"></script>-->
-
-
-
 
 </head>
 <body>
