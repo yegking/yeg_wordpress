@@ -48,7 +48,7 @@ $("#fullbg,#dialog").hide();
 
 <div id="content">
 <div id="m_left">
-
+//<input type="text" value=" <?php wp_dropdown_categories('hide_empty=0&id=tougaocategorg&show_count=1&hierarchical=1');?>">
 <!--这块php主要负责显示顶部图片-->
    <?php if (get_option('strive_slidebar') == 'Display') { //侧边栏?>
   <div class="topad"> <a href=" <?php echo stripslashes(get_option('strive_adurl')); //stripslashes删除由 函数添加的反斜杠，strive_adurl为需要在首页顶部显示的广告链接地址?>" target="_blank"> <img src="<?php echo stripslashes(get_option('strive_adimg')); //首页顶部显示的广告图片地址?>" width="720px"/></a> </div>

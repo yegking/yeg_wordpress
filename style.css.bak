@@ -49,7 +49,7 @@ img, input, select {vertical-align:middle;}
 .header{height:24px;line-height:24px;font-size:12px;background-color:#000000;color:#9F9F9F;}/*background-color:#f7f7f7*/
 .bmsg{color:#d4d4d4;}
 
-.ma-zhuce{ margin-left:3%; margin-right:3%;}
+.ma-zhuce{ margin-left:1%; margin-right:1%;}
 #ma-zhuce a { color:#d4d4d4; transition:0.3s; }
 #ma-zhuce a:hover { color:#FFFFFF; }
 .top-box{margin:0px auto;width:960px;}
@@ -123,6 +123,7 @@ img, input, select {vertical-align:middle;}
 #picwrap{background:url(images/picbg.png) repeat;padding:20px 0;}
 #p_left h3{color:#006600;font-size:14px;font-weight:bold;}
 #p_right h3{color:#006600;font-size:14px;font-weight:bold;padding-left:5px;margin-bottom:15px;}
+
 #p_left .line{height:40px;line-height:40px;}
 #uhead{width:45px;float:left;}
 #uinfo{width:235px;float:right;}

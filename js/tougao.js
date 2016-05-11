@@ -5,7 +5,7 @@ $(function() {
  
 	// 获取显示消息的div
 	var formMessages = $('#form-messages');
- 
+	var url = "http://localhost/myblog/wordpress/index.php";
 	// 为联系表单创建事件监听
 	$(form).submit(function(e) {
 		// 阻止浏览器直接提交表单
@@ -21,7 +21,11 @@ $(function() {
 			url: $(form).attr('action'),
 			async:true,
 			data: formData,
-			cache:false
+			cache:false,
+			//'success':function(){
+			//window.location.href=url
+
+			//}
 				
 		})
 		

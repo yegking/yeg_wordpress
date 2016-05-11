@@ -13,32 +13,6 @@
 
 
 ?>
-
-<!--
-<script>
-$(document).ready(function(){
-var arr = $('#tougao_form').serializeArray();
-var arr2=$.param(arr);
-  $("#btn1").click(function(){ 
-	  var oajax=$.ajax({
-        url:'http://localhost/myblog/wordpress/index.php/active/',
-        type:'POST',
-		async:ture,
-        data:"data"+arr2,
-        success:function(result){
-            $("#t").empty().append(result);
-        },
-        error:function(msg){
-            alert('Error:'+msg);
-        }
-    });
-
-	$('#txtHint').html(oajax.responseText).//当于基本语法的innerHTML="";你向ajax后台的程序发送xmlhttp请求的时候, 后台程序接到请求会进行处理,处理结束后,可以返回一串数据给前台,这个就是responseText. 
-
-  })
-})
-</script>
--->
 <script type="text/javascript" src="<?php bloginfo('template_directory')?>/js/tougao.js"></script>
 
 		
@@ -56,10 +30,16 @@ var arr2=$.param(arr);
                     
    
 
-    <div style="text-align: left; padding-top: 10px;">
+  <!--  <div style="text-align: left; padding-top: 10px;">
         <label for="tougao_title">文章标题:*</label>
         <input type="text" size="40" value="" id="tougao_title" name="tougao_title" />
+    </div>-->
+
+	 <div style="text-align: left; padding-top: 10px;">
+        <label for="tougaocategorg">分类:*</label>
+        <?php wp_dropdown_categories('hide_empty=0&id=tougaocategorg&exclude=1,2&show_count=0&hierarchical=1'); ?>
     </div>
+
 
    
                     
@@ -84,7 +64,6 @@ var arr2=$.param(arr);
 </div>
 </div>
 
-<div id="backtotop" style="display:none;visibility: visible; position: fixed; bottom: 110px;"><div id="totop-box" class="top_curr"></div></div>
 
 </body>
 </html>

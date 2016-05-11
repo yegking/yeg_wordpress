@@ -7,7 +7,7 @@
     <?php if (have_posts()) : while (have_posts()) : the_post();?>
 	
     <div id="pbox" align="center"><!--{border:1px solid #efefef;margin-bottom:10px;padding:4px;position:relative;}-->
-      <div id="picwrap" style="padding: 0px;"> <?php echo post_thumbnail_img(640,420)?> </div><!--改变页面图片大小-->
+      <div id="picwrap" style="padding: 0px;"> <?php echo the_post_thumbnail(640,420)?> </div><!--改变页面图片大小-->
       <div class="hide" id="nextprev">
        
           <?php previous_post_link('%link', ' <div class="piccontr" id="picleft"  > </div>', TRUE); ?><!--翻页-->
@@ -87,6 +87,9 @@ $(document).ready(function(){
   <div id="p_right">
     <h1>
       <?php the_title();?>
+    </h1>
+	 <h1 ><span style="color:#000000;font-size:4px;font-weight:normal">
+      <?php the_content();?>
     </h1>
     <div style="line-height: 52px;">
       <div class="pread fleft"><?php setPostViews(get_the_ID());;echo getPostViews(get_the_ID());?></div>
