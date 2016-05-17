@@ -27,13 +27,10 @@
         <label for="tougao_authoremail">E-Mail:*</label>
         <input type="text" size="40" value="<?php if ( 0 != $current_user->ID ) echo $current_user->user_email; ?>" id="tougao_authoremail" name="tougao_authoremail" />
     </div>
-                    
-   
-
-  <!--  <div style="text-align: left; padding-top: 10px;">
-        <label for="tougao_title">文章标题:*</label>
-        <input type="text" size="40" value="" id="tougao_title" name="tougao_title" />
-    </div>-->
+	<div style="text-align: left; padding-top: 10px;">
+        <label for="tougao_tel">电话:*</label>
+        <input type="text" size="40" placeholder="以便对方联系！" id="tougao_tel" name="tougao_tel" />
+    </div>
 
 	 <div style="text-align: left; padding-top: 10px;">
         <label for="tougaocategorg">分类:*</label>
@@ -45,7 +42,7 @@
                     
     <div style="text-align: left; padding-top: 10px;">
         <label style="vertical-align:top" for="tougao_content">文章内容:*</label>
-        <textarea rows="15" cols="55" id="tougao_content" name="tougao_content"></textarea>
+        <textarea rows="10" cols="35" placeholder="可以填写活动的大体方位"  id="tougao_content" name="tougao_content"></textarea>
     </div>
                     
     <br clear="all">
