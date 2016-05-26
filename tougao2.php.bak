@@ -34,7 +34,7 @@
 
 	 <div style="text-align: left; padding-top: 10px;">
         <label for="tougaocategorg">分类:*</label>
-        <?php wp_dropdown_categories('hide_empty=0&id=tougaocategorg&exclude=1,2,5&show_count=0&hierarchical=1'); ?>
+        <?php wp_dropdown_categories('hide_empty=0&id=tougaocategorg&exclude=1,2,5,7&show_count=0&hierarchical=1'); ?>
     </div>
 
 
@@ -42,7 +42,7 @@
                     
     <div style="text-align: left; padding-top: 10px;">
         <label style="vertical-align:top" for="tougao_content">文章内容:*</label>
-        <textarea rows="10" cols="35" id="tougao_content" name="tougao_content"></textarea>
+        <textarea rows="10" cols="35" placeholder="可以填写活动的大体方位"  id="tougao_content" name="tougao_content"></textarea>
     </div>
                     
     <br clear="all">

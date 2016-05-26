@@ -73,8 +73,18 @@
 <div class="header">
 	<div class="top-box">
 	<div class="fleft bmsg"><?php bloginfo('description'); //博客描述?></div>
-	<div class="fright ma-zhuce" id="ma-zhuce"><a  href="<?php echo bloginfo('url'); ?>/index.php/register">注册</a></div>
-	<div class="fright ma-zhuce" id="ma-zhuce"><a  href="<?php echo bloginfo('url'); ?>/index.php/register">登陆</a></div>
+	<?php 
+if(0 != $current_user->ID ){}
+ 
+else{
+   $link=bloginfo('url'); 
+   echo  "<div class=\"fright ma-zhuce\" id=\"ma-zhuce\"><a  href=\"<?php echo bloginfo(\'url\'); ?>/index.php/register\">注册</a></div>";
+	echo  '<div class="fright ma-zhuce" id="ma-zhuce"><a  href="'.bloginfo("url").'/index.php/register">注册</a></div>';
+}
+	
+?>
+<!--<div class="fright ma-zhuce" id="ma-zhuce"><a  href="<?php echo bloginfo('url'); ?>/index.php/register">注册</a></div>-->
+	
 	<div class="fright">
 	</div>
 	</div>

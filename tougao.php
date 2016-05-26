@@ -66,6 +66,19 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
     if ( empty($content) || mb_strlen($content) > 3000 || mb_strlen($content) < 5) {
        echo "内容必须填写，且长度不得超过3000字，不得少于5字。";
     }
+	switch ($title){
+
+		case "打排球" :$picture=140;
+		break;
+		case "旅游" :$picture=139;
+		break;
+		case "踢足球" :$picture=125;
+		break;
+		case "打篮球" :$picture=77;
+		break;
+		case "打羽毛球" :$picture=37;
+		break;
+	}
     
     $post_content = '发起人昵称: '.$name.'<br />Email: '.$email.'<br />电话:'.$tel.'<br />内容:<br />'.$content;
   
@@ -81,22 +94,22 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
 //echo get_permalink();
 //echo get_category_link($category);
 
-$medium_image_url = wp_get_attachment_image_src( 80, ' large');
-echo $medium_image_url[0];
+//$medium_image_url = wp_get_attachment_image_src( 139, ' large');
+//echo $medium_image_url[0];
 
 
 
     // 将文章插入数据库
 	
     $status = wp_insert_post($tougao);
-	if(get_category($category)->slug)
-set_post_thumbnail($status,125);
+	if(get_category($category)->slug)//检索数据库的类别行对象传递给$category参数后，参数可缓存类别数据。
+set_post_thumbnail($status,$picture);
     if ($status != 0) { 
         // 投稿成功给博主发送邮件
         // somebody#example.com替换博主邮箱
         // My subject替换为邮件标题，content替换为邮件内容
         wp_mail("www.yegking@163.com","My subject","content");
-
+		
         echo "投稿成功！感谢投稿！";
     }
     else {

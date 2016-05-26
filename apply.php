@@ -139,8 +139,8 @@ if (!is_user_logged_in()) { ?>
     </div>
             <div class="aside">
             <ul >
-            <li class="small">>&nbsp;已经拥有豆瓣帐号?<a href="#"> 直接登录？</a></li>
-            <li class="small">>&nbsp;<a href="#">点击下载校跃移动应用</a> </li>
+            <li class="small">>&nbsp;已经拥有校跃帐号?<a href="#"> 直接登录？</a></li>
+           <!-- <li class="small">>&nbsp;<a href="#">点击下载校跃移动应用</a> </li>-->
             </ul>
             </div>
     </div>

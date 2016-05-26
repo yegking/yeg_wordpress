@@ -13,7 +13,7 @@ var bh = $("body").height();
 var bw = $("body").width(); 
 //里面的内容
 $(function(){
-$('#t').load('kz2.php');
+$('#t').load('http://localhost/myblog/wordpress/index.php/tougao2/');
 });
 
 
@@ -104,7 +104,13 @@ $("#fullbg,#dialog").hide();
 
 
 
-
+<?php   
+$args = array(   
+    'walker' => new Menu_With_Description(), //注意是 new Menu_With_Description();   
+    'theme_location' => 'ashu-menu',   
+);   
+wp_nav_menu($args);   
+?>
 
  
 <?php get_footer()?>
