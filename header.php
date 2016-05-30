@@ -48,6 +48,47 @@
 	});
 </script>
 <!--
+
+
+<script type="text/javascript">
+
+	function menu(obj){
+		var obj=document.getElementById(obj);
+		//$('top-box').css('display', null);
+		if(obj.style.display=='none'){
+			obj.style.display="block";
+		}else{
+
+			obj.style.display='none';
+		}
+}
+</script>-->
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $("#ma-user").click(function(e){ 
+    $("#menuLists").toggle(); 
+    e.stopPropagation();
+  })
+   
+  $(document).click(function(){ 
+    $("#menuLists").hide(); 
+  }) 
+   
+  $("#menuLists li").click(function(){ 
+    $(".main").text($(this).text()); 
+    $("#menuLists").hide(); 
+  }) 
+  $("#ma-user").click(function(e){ 
+    e.stopPropagation(); 
+  }) 
+}); 
+</script>
+<script type="text/javascript">
+$('#ma-user').bind("selectstart", function () { return false; });
+</script>
+<!--
 <script type="text/javascript">
     (function(win,doc){
         var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
@@ -67,24 +108,26 @@
     })(window,document);
 </script>
 <script src="http://l.tbcdn.cn/apps/top/x/sdk.js?appkey=21784812"></script>-->
-
 </head>
 <body>
 <div class="header">
 	<div class="top-box">
 	<div class="fleft bmsg"><?php bloginfo('description'); //博客描述?></div>
-	<?php 
-if(0 != $current_user->ID ){}
- 
-else{
-   $link=bloginfo('url'); 
-   echo  "<div class=\"fright ma-zhuce\" id=\"ma-zhuce\"><a  href=\"<?php echo bloginfo(\'url\'); ?>/index.php/register\">注册</a></div>";
-	echo  '<div class="fright ma-zhuce" id="ma-zhuce"><a  href="'.bloginfo("url").'/index.php/register">注册</a></div>';
-}
 	
-?>
-<!--<div class="fright ma-zhuce" id="ma-zhuce"><a  href="<?php echo bloginfo('url'); ?>/index.php/register">注册</a></div>-->
+<?php if(is_user_logged_in() ){  $current_user = wp_get_current_user(); ?>
+       <div class="fright ma-zhuce ma-f " id="ma-user" onclick="menu('menuLists')"><span class="hover"><?php echo $current_user->user_login; ?>的账号<span  class="arrow"></span>　　</span>　
+<ul id="menuLists" style="display:none">
+<li><a href="asf">个人中心</a></li>
+<li><a href="asf">个人中心</a></li>
+<li><a href="<?php echo  wp_logout_url(home_url()); ?>" title="Logout">退出账号</a></li>
+</ul>
+	   </div>
+ <?php  } ?>
+<?php if(!is_user_logged_in() ){ ?>
+	<div class="fright ma-zhuce ma-f" id="ma-zhuce" ><a  href="<?php echo bloginfo('url'); ?>/index.php/register">注册</a></div>
+	<div class="fright ma-zhuce " id="ma-zhuce"><a  href="<?php echo bloginfo('url'); ?>/index.php/register">登陆</a></div>
 	
+<?php } ?>
 	<div class="fright">
 	</div>
 	</div>

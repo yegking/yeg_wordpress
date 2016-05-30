@@ -76,7 +76,7 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
 		break;
 		case "打篮球" :$picture=77;
 		break;
-		case "打羽毛球" :$picture=139;
+		case "打羽毛球" :$picture=37;
 		break;
 	}
     

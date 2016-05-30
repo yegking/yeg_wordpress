@@ -68,7 +68,7 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
     }
 	switch ($title){
 
-		case "打排球" :$picture=140;
+		case "打排球" :$picture=175;
 		break;
 		case "旅游" :$picture=139;
 		break;
