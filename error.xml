@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<errors>  
+    <error id="0">验证码错误</error>  
+	 <error id="1">请输入有效的用户名</error>
+   <error id="2">用户名或密码错误</error>
+     <error id="3">验证码错误</error>  
+</errors>  
+
+$doc = new DOMDocument(); 
+
+$doc->load( get_stylesheet_directory_uri().'/error.xml'); //读取xml文件 
+
+$error = $doc->getElementsByTagName( "error" ); //取得humans标签的对象数组 
+$len = $error->length;
+$data = array();
+
+for($i=0;$i<$len;$i++) {
+	$data[$i] = array();
+	//第1个 item 代表 user标签的 顺序  第2个 item 代表属性的顺序
+	$data[$i] =  $error->item($i)->nodeValue;
+} 

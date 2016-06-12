@@ -1,0 +1,8 @@
+{
+  url:"http://localhost/myblog/wordpress/wp-content/themes/Qingart/checkcode.php?id=<?php  ?>"
+
+
+
+
+}
+$token = md5(uniqid(rand(), true));

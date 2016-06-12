@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>  
+<errors>  
+    <error id="0">验证码错误</error>  
+	 <error id="1">请输入有效的用户名</error>
+   <error id="2">用户名或密码错误</error>
+     <error id="3">验证码错误</error>  
+</errors>  

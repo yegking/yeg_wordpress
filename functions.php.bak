@@ -527,7 +527,7 @@ function add_query_vars($aVars) {
 add_filter('query_vars', 'add_query_vars');
 
 function add_rewrite_rules($aRules) {
-  $aNewRules = array('(index.php/checkcode)' => 'checkcode?id=$matches[1]');
+  $aNewRules = array('(index.php/checkcode)' => 'checkcode.php?id=$matches[1]');
   $aRules = $aNewRules + $aRules;
   return $aRules;
 }
