@@ -10,7 +10,7 @@ $token= $_SESSION['token'];
 
 	$domain = parse_url($_SERVER['HTTP_REFERER'],PHP_URL_PATH);
 	if(($domain ==  parse_url(home_url('index.php/login'),PHP_URL_PATH))||($id==$token)) {
-
+unset($_SESSION["token"]);
 
 
 define('ROOT_PATH', dirname(__FILE__));

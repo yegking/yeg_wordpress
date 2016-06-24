@@ -204,7 +204,7 @@ echo '<p class="error">'.$errors.'</p>';
  <div class="item item-captcha">
       <label>验证码</label>
       <div>
-<img src="http://localhost/myblog/wordpress/index.php/checkcode?id=<?php echo $token; ?>" onclick="javascript:this.src='http://localhost/myblog/wordpress/index.php/checkcode?tm='+Math.random();"  id="captcha_image" alt="captcha" class="captcha_image"/>
+<img src=home_url(index.php/checkcode) onclick="javascript:this.src="home_url(index.php/checkcode)"'?tm='+Math.random();"  id="captcha_image" alt="captcha" class="captcha_image"/>
 <div class="captcha_block">
   <span id="captcha_block"  class="pl">请输入上图中的字母</span>
   <input type="text" id="captcha_field" name="captcha-solution" tabindex=3  placeholder="验证码" />

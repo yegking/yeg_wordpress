@@ -518,22 +518,7 @@ if ( !get_option( 'use_smilies' ) )
     );
 }
 
-//自己加的路由
-function add_query_vars($aVars) {
-  $aVars[] = "id"; 
-  return $aVars;
-}
-// hook add_query_vars function into query_vars
-add_filter('query_vars', 'add_query_vars');
 
-function add_rewrite_rules($aRules) {
-  $aNewRules = array('(index.php/checkcode)' => 'checkcode.php?id=$matches[1]');
-  $aRules = $aNewRules + $aRules;
-  return $aRules;
-}
-
-// hook add_rewrite_rules function into rewrite_rules_array
-add_filter('rewrite_rules_array', 'add_rewrite_rules');
 
 
 

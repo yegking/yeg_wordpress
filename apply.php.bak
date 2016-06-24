@@ -3,21 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>欢迎加入校跃</title>
-
-<script type="text/javascript" src="https://img3.doubanio.com/f/accounts/4ff6b04bf980286a3aef551db4adbf73a937e01b/js/lib/cookie.js"></script>
-  <script type="text/javascript" src="https://img3.doubanio.com/f/accounts/c5268df4c1f0bada95cb3d2b80089a50b494b5ee/js/lib/jquery.min.js"></script>
-  <script type="text/javascript" src="https://img3.doubanio.com/f/accounts/1729d519af24044829c78cc77035e490f302b8a9/js/lib/do.js" data-cfg-corelib="https://img3.doubanio.com/f/accounts/c5268df4c1f0bada95cb3d2b80089a50b494b5ee/js/lib/jquery.min.js"></script>
 <style>
-<script>
-Do.add('dialog-css', {path: 'https://img3.doubanio.com/f/accounts/7bc4ad359a2a2710a0bcdf5831dbaf99fc3cc5cf/css/ui/dialog.css', type: 'css'});
-Do.add('dialog', {path: 'https://img3.doubanio.com/f/accounts/4b3bad5e25de78678d700dd5353570dce3e6bbcc/js/ui/dialog.js', type: 'js', requires: ['dialog-css']});
-Do.add('validate', {path: 'https://img3.doubanio.com/f/accounts/acc10aa47ee2ad58fa7b7a63575e4ad663d073ff/js/lib/validate.js', type: 'js'});
-</script>
-
 html{color:#111;background:#fff}body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote,p{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,i,strong,th,var,optgroup{font-style:normal;font-weight:normal}ul,ol{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:""}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}legend{color:#000}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}input,button,textarea,select{*font-size:100%}pre{white-space:pre-wrap;word-wrap:break-word}a{cursor:pointer}a:link{color:#369;text-decoration:none}a:visited{color:#669;text-decoration:none}a:hover{color:#fff;text-decoration:none;background:#039}a:active{color:#fff;text-decoration:none;background:#f93}a img{border-width:0;vertical-align:middle}body,td,th{font:12px Helvetica,Arial,sans-serif;line-height:1.62}table{border-collapse:collapse;border:0;padding:0;margin:0}wbr:after{content:"\00200B"}textarea{resize:none}input[type=text]:focus,input[type=password]:focus,textarea:focus{outline:0}body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}.bn-small,a.bn-cta,.bn-cta input,.bn-flat input{margin:0;border:0;background:transparent;cursor:pointer;-webkit-appearance:none}.lnk-flat,.bn-flat{display:inline-block;*display:inline;zoom:1;overflow:hidden;vertical-align:middle;color:#444;border-width:1px;border-style:solid;border-color:#bbb #bbb #999;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.lnk-flat,.bn-flat input{height:2.1em;padding:0 1.16em 2px;line-height:2.2;*line-height:2.3;font-size:12px;cursor:pointer;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background:url(https://img3.doubanio.com/f/accounts/23850eee993fea8be43be857dcbaa23961de56aa/pics/bn_ie_bg.png) repeat-x top;background-image:-webkit-gradient(linear,left top,left bottom,from(#fcfcfc),to(#e9e9e9));background-image:-webkit-linear-gradient(top,#fcfcfc,#e9e9e9);background-image:-moz-linear-gradient(top,#fcfcfc,#e9e9e9);background-image:-ms-linear-gradient(top,#fcfcfc,#e9e9e9);background-image:-o-linear-gradient(top,#fcfcfc,#e9e9e9);background-image:linear-gradient(top,#fcfcfc,#e9e9e9)}.lnk-flat:hover,.bn-flat input:hover,.bn-flat-over{color:#333;border-color:#999 #999 #666;background-color:transparent;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8',endColorstr='#dddddd',GradientType=0);background-image:-webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#ddd));background-image:-webkit-linear-gradient(top,#f8f8f8,#ddd);background-image:-moz-linear-gradient(top,#f8f8f8,#ddd);background-image:-ms-linear-gradient(top,#f8f8f8,#ddd);background-image:-o-linear-gradient(top,#f8f8f8,#ddd);background-image:linear-gradient(top,#f8f8f8,#ddd)}.lnk-flat:active,.bn-flat input:active,.bn-flat-active input{color:#333;border-color:#999 #999 #666;background:#ddd}.lnk-flat{line-height:2.2em}.lnk-flat:link,.lnk-flat:visited{text-decoration:none}a.bn-cta,.bn-cta input{display:inline-block;padding:4px 20px;border:1px solid #528641;background:#3fa156;color:#fff;font-size:14px;letter-spacing:2px;*position:relative;*display:inline;zoom:1;*padding:6px 20px 4px;*line-height:1.2;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}a.bn-cta{vertical-align:middle}.bn-cta input{padding:5px 18px;*padding:4px 10px 2px;*vertical-align:middle}a.bn-cta:link,a.bn-cta:visited{color:#fff}.bn-cta input:hover,a.bn-cta:hover{background-color:#4fca6c;border-color:#6aad54}.bn-cta input:active,a.bn-cta:active{background-color:#3fa156;border-color:#528641}.bn-small{padding:1px 2px;border:1px solid #ffabab;color:#ff7676;background:#fdd;height:1.5em\9;line-height:1.56;*line-height:1.4;*position:relative;-webkit-appearance:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}a.bn-small:link,a.bn-small:visited,a.bn-small:hover,a.bn-small:active{padding:0 4px;line-height:1.8;font-size:12px;*line-height:1.3;zoom:1;*height:13px;*overflow:hidden;color:#ff7676;background:#fdd}a.bn-small:hover,a.bn-small:active{border-color:#ff7676;background-color:#ff7676;color:#fdd}.recsubmit .bn-flat{margin:0 10px}.basic-input,.basic-textarea{padding:5px;height:18px;font-size:14px;vertical-align:middle;border:1px solid #c9c9c9;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.basic-input:focus,.basic-textarea:focus{border:1px solid #a9a9a9}.disabled-input{background:#eee;color:#999}.basic-textarea{height:auto}ul,ol{margin:0;padding:0}.wrapper,.header,.footer{width:950px;margin:0 auto 40px;overflow:hidden;zoom:1}.header{margin-bottom:40px}.article{float:left;width:590px;margin-right:50px}.aside{color:#666;overflow:hidden;zoom:1}.aside h2{font-size:15px;color:#072;margin:0 0 12px 0;line-height:150%}.single-nav{padding-top:30px}.sidenav{margin-top:1em}.sidenav li{margin-bottom:1em}h1{display:block;margin:0;padding:0 0 15px 0;font-size:25px;font-weight:bold;color:#494949;line-height:1.1}p{margin:1em 0}.site-nav-logo a:hover{background:0}
 </style>
-
-
 <style>
 a { color: #336699 }
 em { font-style: normal }
@@ -49,7 +37,7 @@ p.validate-error { margin-left: 75px }
 .captcha-item { zoom: 1 }
 .agreement input , .agreement label { cursor: pointer }
 .agreement-label { color: #000 }
-#email_suggestion { display: inline-block; position: absolute; left: 75px; top: 30px; _left: 0px }
+#email_suggestion { display: inline-block; position: absolute; left: 75px; top: 70px; _left: 0px }
 #email_suggestion p { background: #eef9eb; border: 1px solid #5e5e5f; margin: 0; padding: 3px }
 .btn-submit { cursor: pointer; font-size: 14px; font-weight: bold; padding: 6px 26px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; *width: 100px }
 .disabled { color: #999; background: #f0f0f0; border: 1px solid #b9b9b9 }
@@ -70,6 +58,17 @@ p.validate-error { margin-left: 75px }
 </style>
 
 
+
+<!--<script type="text/javascript" src="https://img3.doubanio.com/f/accounts/4ff6b04bf980286a3aef551db4adbf73a937e01b/js/lib/cookie.js"></script>-->
+  <script type="text/javascript" src="<?php bloginfo('template_directory')?>/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_directory')?>/js/do.js" data-cfg-corelib="<?php bloginfo('template_directory')?>/js/jquery-1.7.2.min.js"></script>
+<script>
+Do.add('dialog-css', {path: '<?php bloginfo('template_directory')?>/dialog.css', type: 'css'});
+Do.add('dialog', {path: '<?php bloginfo('template_directory')?>/js/dialog.js', type: 'js', requires: ['dialog-css']});
+Do.add('validate', {path: '<?php bloginfo('template_directory')?>/js/validate.js', type: 'js'});
+</script>
+
+
 </head>
 
 <?php
@@ -81,43 +80,35 @@ p.validate-error { margin-left: 75px }
  *  2013年02月02日 ：
  *  首个版本
  */
-printf($_SERVER['HTTP_REFERER']);
-if( !empty($_POST['ludou_reg']) ) {
+session_start();
+if(!empty($_POST['ludou_reg'])){
+	
+	if(($_SESSION["email1"]==$_POST['email'])&&($_SESSION["em"]==$_POST['code'])){
+
+	
   $error = '';
-  $sanitized_user_login = sanitize_user( $_POST['user_login'] );
-  $user_email = apply_filters( 'user_registration_email', $_POST['user_email'] );
+  $sanitized_user_login = sanitize_user( $_POST['name1'] );
+  $user_email = apply_filters( 'user_registration_email', $_POST['email'] );
+  	$school=$_POST['select'];  
 
   // Check the username
   if ( $sanitized_user_login == '' ) {
-    $error .= '<strong>错误</strong>：请输入用户名。<br />';
+    $error .= '<strong>错误</strong>：请输入昵称。<br />';
   } elseif ( ! validate_username( $sanitized_user_login ) ) {
-    $error .= '<strong>错误</strong>：此用户名包含无效字符，请输入有效的用户名<br />。';
+    $error .= '<strong>错误</strong>：此昵称包含无效字符，请输入有效的昵称<br />。';
     $sanitized_user_login = '';
   } elseif ( username_exists( $sanitized_user_login ) ) {
-    $error .= '<strong>错误</strong>：该用户名已被注册，请再选择一个。<br />';
+    $error .= '<strong>错误</strong>：该昵称已被注册，请再选择一个。<br />';
   }
 
-  // Check the e-mail address
-  if ( $user_email == '' ) {
-    $error .= '<strong>错误</strong>：请填写电子邮件地址。<br />';
-  } elseif ( ! is_email( $user_email ) ) {
-    $error .= '<strong>错误</strong>：电子邮件地址不正确。！<br />';
-    $user_email = '';
-  } elseif ( email_exists( $user_email ) ) {
-    $error .= '<strong>错误</strong>：该电子邮件地址已经被注册，请换一个。<br />';
-  }
 
-  //receive select
-	$school=$_POST['select'];  
+
 
   // Check the password
-  if(strlen($_POST['user_pass']) < 6)
-    $error .= '<strong>错误</strong>：密码长度至少6位!<br />';
-  elseif($_POST['user_pass'] != $_POST['user_pass2'])
-    $error .= '<strong>错误</strong>：两次输入的密码必须一致!<br />';
-      
+  if(strlen($_POST['password']) < 8)
+    $error .= '<strong>错误</strong>：密码长度至少8位!<br />';
     if($error == '') {
-    $user_id = wp_create_user( $sanitized_user_login, $_POST['user_pass'], $user_email );
+    $user_id = wp_create_user( $sanitized_user_login, $_POST['password'], $user_email );
 
 
 	
@@ -136,8 +127,9 @@ if( !empty($_POST['ludou_reg']) ) {
     }
   }
 }
+}
 $token = md5(uniqid(rand(), true));
-						$_SESSION['ludou_token'] = $token;
+$_SESSION['ludou_token'] = $token;
 
 ?>	
 <?php if(!empty($error)) {
@@ -150,7 +142,7 @@ if (!is_user_logged_in()) { ?>
 <div id="header">
   <div class="site-nav single-nav">
     <div class="site-nav-logo">
-      <a href="https://www.douban.com/accounts/">
+      <a href="">
           <img src="https://img3.doubanio.com/dae/accounts/static/pics/douban/lg_account.png" alt="豆瓣">
       </a>
     </div>
@@ -160,97 +152,130 @@ if (!is_user_logged_in()) { ?>
     </div>
     
   <div class="wrapper">
-    <h1> 欢迎加入校跃</h1>
-    <div class="main">
-      <form name="" method="post" enctype="multipart/form-data" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
-	   <div style="display:none;">
+    
+<h1>
+欢迎加入校跃
+</h1>
+
+    <div class="article">
+    <form name="lzform" method="post"  action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+        <div style="display:none;">
             <input type="hidden" name="source" value="simple"/>
-            <input type="hidden" name="redir"  value="<?php echo $token; ?>" />
         </div>
-	  <div class="item extra-tips">
-        <label>昵　称</label>
-          <label for="user_login"></label>
-          <input type="text" name="name" id="name" class="basic-input" maxlength="15" tabindex="1" value="<?php if(!empty($sanitized_user_login)) echo $sanitized_user_login; ?>" />
-       
+		 <div class="item extra-tips">
+            <label>昵称</label>
+            <input id="name" name="name1" type="text" class="basic-input" maxlength="15" tabindex="1" value=""/>
         </div>
         <div class="item extra-tips">
-       <label>邮　箱</label>
-          <label for="user_email"></label>
-          <input type="text" name="user_email" class="basic-input" id="user_email" value="<?php if(!empty($user_email)) echo $user_email; ?>" />
-        
+            <label>密码</label>
+            <input id="password" name="password" type="password" class="basic-input" tabindex="2" maxlength="20"/>
         </div>
-         <div class="item extra-tips">
-        <label>密　码</label>
-          <input type="password" name="user_pwd1" class="basic-input" id="user_pwd1" />
-        
+		<div class="suggestion">
+            <div id="email_suggestion"></div>
         </div>
-		<div class="item extra-tips">
-        <label>重复密码</label>
-          <input type="password" name="user_pwd2" class="basic-input" id="user_pwd2" />
-        
+        <div class="item extra-tips">
+            <label>邮箱</label>
+            <input id="email" name="email" type="text" class="basic-input" maxlength="60" tabindex="3" value=""/>
         </div>
-         <div class="item extra-tips">
-        <label>所在大学</label>
-          <label for="select"></label>
-          <select name="select" id="select">
-            <option>电子科技大学</option>
-            <option>锦城学院</option>
-          </select>
-        
+        <div class="suggestion">
+            <span class="tips">用邮箱接收注册验证码</span>
         </div>
 
-
+            <div class="item loc-item">
+                <label>学校</label>
+                <span class="loc">
+                <em id="location">豆瓣猜你在<strong>兰州</strong>，没猜对？</em> <a href="#" class="a-btn-location" id="edloc">手动选择</a>
+                </span>
+                
+                <input type="hidden" name="loc" value="118381"/>
+            </div>
 
 
         <div class="item">
             <label>手机号</label>
-            <input id="verify_phone" name="verify_phone" type="text" class="basic-input" maxlength="60" value="" tabindex="1"/>
+            <input id="verify_phone" name="verify_phone" type="text" class="basic-input" maxlength="60" value="" tabindex="4"/>
         </div>
-        <div class="suggestion">
-            <span class="tips">用手机接收注册验证码</span>
-        </div>
+       
         <div class="item captcha-item">
             <label>验证码</label>
-            <input id="code" name="code" type="text" class="basic-input small" maxlength="10" tabindex="2"/>
+            <input id="code" name="code" type="text" class="basic-input small" maxlength="10" tabindex="5"/>
             <input id="request-phone-code-btn" type="submit" value="获取验证码"/>
             <span id="tips-error" class="tips"><em></em></span>
             <span id="tips-info" class="tips"></span>
             <span class="validate-error" id="frm_error"></span>
         </div>
 
-
-
-        <div class="item" style="padding-left:50px">
-        <label class="small"> 
-          <input type="checkbox" name="checkbox" id="checkbox" />
-          我已经认真阅读并同意校跃的《<a href="#">使用协议</a>》。</label>
+        <div class="item">
+          <p class="agreement">
+            <label for="agreement" class="agreement-label">
+              <input type="checkbox" id="agreement" name="agreement" tabindex="5"
+                />
+              我已经认真阅读并同意校跃的《<a target="_blank" href="/about?policy=agreement">使用协议</a>》。
+            </label>
+          </p>
         </div>
-        <div class="item" style="padding-left:50px">
+        <div class="item-submit">
+            <label>&nbsp;</label>
+            <input type="submit" name="register" value="注册" disabled="disabled" id="button" class="btn-submit disabled" tabindex="6" title="阅读并同意豆瓣的《使用协议》方可注册。"/>
+        </div>
 		 <input type="hidden" name="ludou_reg" value="ok" />
-        <input name="tj" type="submit" id="tj" value="注册" />
-        </div>
-      </form>
-     <?php } else {
+    </form>
+
+
+	  <?php } else {
  echo '<p class="ludou-error">您已注册成功，并已登录！</p>';
 } ?>
+ 
+
     </div>
-            <div class="aside">
-            <ul >
-            <li class="small">>&nbsp;已经拥有校跃帐号?<a href="#"> 直接登录？</a></li>
-           <!-- <li class="small">>&nbsp;<a href="#">点击下载校跃移动应用</a> </li>-->
-            </ul>
-            </div>
+    <div class="aside">
+      
+<ul class="sidenav">
+  <li>&gt;&nbsp;已经拥有豆瓣帐号? <a rel="nofollow" href="/login">直接登录</a></li>
+  <li>&gt;&nbsp;<a href="https://www.douban.com/mobile/">点击下载豆瓣移动应用</a></li>
+
+</ul>
+
     </div>
+  </div>
+
+    <div class="footer">
+      
+<div id="footer">
+
+
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2015 douban.com, all rights reserved
+</span>
+
+<span class="fright">
+    <a href="https://www.douban.com/about">关于豆瓣</a>
+    · <a href="https://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="https://www.douban.com/about?policy=disclaimer">免责声明</a>
     
-    <a href="#" class="a-btn-location" id="edloc">手动选择</a>
+    · <a href="https://www.douban.com/help/">帮助中心</a>
+    · <a href="https://developers.douban.com/" target="_blank">开发者</a>
+    · <a href="https://www.douban.com/mobile/">移动应用</a>
+    · <a href="https://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+
+
+
 </div>
+
+    </div>
+    <!-- main -->
+    <!-- COLLECTED JS -->
+    
 
 <script>
 
-
 Do('dialog', function(){
 
-    (function(){var e,g,f,c,b="captcha_dialog",a="http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/reg_captcha.php";function h(){$.getJSON(a,function(j){window.alert(j.url);f.attr("src",j.url);g.val(j.token)});captcha_solution_el.val("")}function d(){if(e!==undefined){e.updateSize();e.updatePosition()}}function i(k,j){if(e!==undefined){e.open();h();captcha_solution_el.val("");captcha_solution_el.focus();return}e=dui.Dialog({title:"请输入下图中的字母",url:a,nodeId:b,modal:true,width:340,cache:false, buttons:[{cls:"confirm-btn",text:"确定",method:function(){var m=g.val().trim(),l=captcha_solution_el.val().trim();if(l){e.close();k(m,l)}}}],callback:function(){$.getJSON(a,function(l){e.setContent('                        <div class="captcha-item">                            <input type="hidden" value="'+l.token+'" name="captcha-id">                            <img src="'+l.url+'" class="captcha-img"/>                             <input type="text" name="captcha-solution" class="basic-input captcha" id="captcha" maxlength="10"/>                        </div>');g=e.node.find("input[name='captcha-id']");f=e.node.find("img.captcha-img");captcha_solution_el=e.node.find("input[name='captcha-solution']");c=e.node.find(".confirm-btn input");f.one("load",function(){d()}).each(function(){if(this.complete){$(this).load()}});captcha_solution_el.keypress(function(m){if(m.which==13){m.preventDefault();c.click()}});f.click(h);d();captcha_solution_el.focus()});e.btnClose.click(function(){if(j!==undefined){j()}})}},true);e.open()}window.show_captcha_dialog=i})();
+    (function(){var e,g,f,c,b="captcha_dialog",a="http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/reg_captcha.php";function h(){$.getJSON(a,function(j){//window.alert(j.url);
+	f.attr("src",j.url);g.val(j.token)});captcha_solution_el.val("")}function d(){if(e!==undefined){e.updateSize();e.updatePosition()}}function i(k,j){if(e!==undefined){e.open();h();captcha_solution_el.val("");captcha_solution_el.focus();return}e=dui.Dialog({title:"请输入下图中的字母",url:a,nodeId:b,modal:true,width:340,cache:false, buttons:[{cls:"confirm-btn",text:"确定",method:function(){var m=g.val().trim(),l=captcha_solution_el.val().trim();if(l){e.close();k(m,l)}}}],callback:function(){$.getJSON(a,function(l){e.setContent('                        <div class="captcha-item">                            <input type="hidden" value="'+l.token+'" name="captcha-id">                            <img src="'+l.url+'" class="captcha-img"/>                             <input type="text" name="captcha-solution" class="basic-input captcha" id="captcha" maxlength="10"/>                        </div>');g=e.node.find("input[name='captcha-id']");f=e.node.find("img.captcha-img");captcha_solution_el=e.node.find("input[name='captcha-solution']");c=e.node.find(".confirm-btn input");f.one("load",function(){d()}).each(function(){if(this.complete){$(this).load()}});captcha_solution_el.keypress(function(m){if(m.which==13){m.preventDefault();c.click()}});f.click(h);d();captcha_solution_el.focus()});e.btnClose.click(function(){if(j!==undefined){j()}})}},true);e.open()}window.show_captcha_dialog=i})();
 
     var need_captcha_test = true;
 
@@ -259,12 +284,13 @@ Do('dialog', function(){
         request_phone_code();
     });
 
-
     function request_phone_code(captcha_id, captcha_solution){
         $('#tips-error em').text('')
-        var i = 60, num = $.trim($("#verify_phone").val());
-        if(num === "" || num.length != 11) {
-            displayError($("#verify_phone")[0], "请输入正确手机号");
+        var i = 60, num = $.trim($("#email").val());
+		var e = $('#email').parents('.item').hasClass('has-error');
+		//window.alert(e);
+        if(num === ""||e==true) {
+            displayError($("#request-phone-code-btn")[0], "请输入正确的邮箱");
             return;
         }
         var data = { phone: num},
@@ -280,8 +306,9 @@ Do('dialog', function(){
                 data.captcha_solution = captcha_solution;
             }
         }
+		$("#_err").text('');
         $('#tips-info').text('请稍等...');
-        $.post('/accounts/j/register/send_register_verify_code', data, function(result) {
+        $.post('http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/send_register_verify_code.php', data, function(result) {
             if (result.r === 0) {
                 el.attr('disabled', 'disabled');
                 var timer = setInterval(function () {
@@ -291,14 +318,16 @@ Do('dialog', function(){
                         el.removeAttr("disabled").val('获取验证码');
                     }
                 }, 1000);
-                $('#tips-info').text('验证短信已发送')
+				$("#_err").text('');
+                $('#tips-info').text('邮箱验证码已发送');
             } else {
                 if (result.reason === 'captcha_required'){
                     need_captcha_test = true;
                     setTimeout(function() { request_phone_code(); }, 0)
                     return
                 } else {
-                    $('#tips-error em').text('验证短信发送失败，请稍后再试');
+						$("#_err").text('');
+                    $('#tips-error em').text('邮箱验证码发送失败，请稍后再试');
                 }
                 $('#tips-info').text('');
             }
@@ -309,7 +338,7 @@ Do('dialog', function(){
 $("form .change-captcha-btn").on('click', function(){
     var captcha_id_el = $('form input[name="captcha-id"]'),
         captcha_img_el = $('form img.captcha-img'),
-        captcha_url = '/accounts/j/misc/reg_captcha';
+        captcha_url = 'http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/reg_captcha.php';
     $.getJSON(captcha_url, function(captcha) {
         captcha_img_el.attr("src", captcha.url);
         captcha_id_el.val(captcha.token);
@@ -452,7 +481,7 @@ Do('validate','dialog',function(){
     var optionMsg = {
         email: '用来登录豆瓣，接收到激活邮件才能完成注册',
         password: '至少包含字母和数字，最短8个字符，区分大小写',
-        name: '中、英文均可，最长14个英文或7个汉字',
+        name1: '中、英文均可，最长14个英文或7个汉字',
         loc: ''
     },
     validateError = {
@@ -489,10 +518,10 @@ Do('validate','dialog',function(){
             invalidFormat: function(el) {
                   return !$.validate.isEmail($.trim(el.val()));
             },
-            /*unavailable: function(el,o) {
+            unavailable: function(el,o) {
                 var item = el.parents('.item');
                 o.asyncValidate(el,
-                '/accounts/j/register/is_registered?email=' + $.trim(el.val()),
+                "<?php echo home_url()?>/index.php/is_registered?email=" + $.trim(el.val()),
                 function(j){
                     if (j.ok){
                         el.val(s);
@@ -500,7 +529,7 @@ Do('validate','dialog',function(){
                         item.addClass('has-error');
                     }
                 });
-            },*/
+            },
             unableForTom: function(el,o) {
                 var domain = el.val().split('@')[1];
                 return domain == 'tom.com';
@@ -537,7 +566,7 @@ Do('validate','dialog',function(){
             }
         },
         name: {
-            elems: 'input[name=name]',
+            elems: 'input[name=name1]',
             isNull: function(el) {
                 return !$.trim(el.val());
             },
@@ -560,7 +589,8 @@ Do('validate','dialog',function(){
         }
     };
     $('form').validateForm(validateRules, validateError, optionMsg, null);
-
+	
+	
 
     String.prototype.strReverse=function(){var b="";for(var a=0;a<this.length;a++){b=this.charAt(a)+b}return b};function checkPassword(f){if(!f){return 0}var h=8;if(f.length<h){return 0}var g=0;var e="abcdefghijklmnopqrstuvwxyz";var d="01234567890";var a="~)!@#$%^&*()_+-={}[]|:;<>?,./";if(f.length>=10){g+=20}if(f.length>=12){g+=20}if(f.match(/[a-z]/g)){g+=20}if(f.match(/[0-9]/g)){g+=20}if(f.match(/[A-Z]/g)){g+=20}for(var i=0;i<a.length;i++){if(f.indexOf(a[i])!=-1){g+=20;break}}for(var i=0;i<23;i++){var b=e.substring(i,parseInt(i+3));var c=b.strReverse();if(f.indexOf(b)!=-1||f.indexOf(c)!=-1){g-=20}b=e.toUpperCase().substring(i,parseInt(i+3));c=b.strReverse();if(f.indexOf(b)!=-1||f.indexOf(c)!=-1){g-=20}}for(var i=0;i<8;i++){var b=d.substring(i,parseInt(i+3));var c=b.strReverse();if(f.indexOf(b)!=-1||f.toLowerCase().indexOf(c)!=-1){g-=20}}return Math.max(g,0)};
 
@@ -631,7 +661,7 @@ Do.add('dialog-css',{path: 'http://localhost/myblog/wordpress/wp-content/themes/
 Do.add('dialog',{path: 'http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/accounts/dialog.js',type:'js',requires:['dialog-css']});
 Do('dialog',function(){
 var where = 'register';
-var dlg=dui.Dialog();dlg.set({title:"选择你的学校",url:"http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/school.html",width:(/device-mobile/i).test(document.documentElement.className)?document.documentElement.offsetWidth*0.9:560,cache:true,callback:function(a,b){$(".selected .loc-type").each(function(){getLocations($(this))});$("body").delegate("a.habitable","click",function(c){c.preventDefault();if(where=="registe"){$("#l_tabs").nextAll(".loading").show();$("input[name='loc']").val($(this).attr("id"));$("em#location").html("<strong>"+$(this).text()+"</strong>");$("em#location").next().html("重新选择");b.close();$(".loc-item .validate-error").hide()}else{$.post("https://www.douban.com/j/location/move",{loc:$(this).attr("i"),ck:get_cookie("ck")},function(d){if(d.r){b.close();window.location.reload()}else{alert("请求失败，请重试。")}})}});$("body").delegate("a.unhabitable, a.loc-type","click",function(f){f.preventDefault();var d=$.trim($(this).attr("id")).substring($.trim($(this).attr("id")).indexOf("_")+1);var c="#p_"+d;$("#l_tabs").nextAll(".loading").show();if($(this).hasClass("unhabitable")){getChildren($(this))}if($(this).hasClass("loc-type")){getLocations($(this))}$(this).parent().siblings("li.selected").removeClass("selected");$(this).parent().addClass("selected");$(c).siblings("div").remove();dlg.updateSize();dlg.updatePosition()})}});function getLocations(f){var e=f.attr("id");var c=$.trim(e).substring($.trim(e).indexOf("_")+1);var d="http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/schools/"+c;var b="p_"+c;var g=$("<div></div>").insertAfter(f.parent().parent()).attr("id",b);var a=$("<ul></ul>").appendTo(g).wrapAll("<div></div>");a.parent().addClass("panel");$.getJSON(d,function(i){$("#l_tabs").nextAll(".loading").hide();$.each(i.locations,function(k,j){var l=$('<a href="#"></a>');if(!j.habitable){l.addClass("unhabitable")}else{l.addClass("habitable")}l.text(j.name).attr({id:j.id,title:j.population+"人"}).appendTo(a).wrapAll("<li></li>");if(j.population<=100){l.parent().hide().addClass("off")}});$("<li></li>").css({display:"block",height:"10px"}).insertBefore(a.children("li.off:first"));if(a.children(".off").length){var h=$("<p></p>").addClass("expand");h.appendTo(a);$("<a></a>").appendTo(h).text("更多")}dlg.updateSize();dlg.updatePosition()})}function getChildren(f){var e=f.attr("id");var c=$.trim(e).substring($.trim(e).indexOf("_")+1);var d="http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/schools/"+c;var b="p_"+c;var g=$("<div></div>").insertAfter(f.parent().parent()).attr("id",b);var a=$("<ul></ul>").appendTo(g).wrapAll("<div></div>");a.parent().addClass("panel");$.getJSON(d,function(h){$("#l_tabs").nextAll(".loading").hide();$.each(h.locations,function(k,j){if(!j.has_child){alert("此地区不能作为常居地，请选择其他城市");g.remove();return false}$.each(j.children,function(m,l){var n=$('<a href="#"></a>');if(!l.habitable){n.addClass("unhabitable")}else{n.addClass("habitable")}n.text(l.name).attr({id:l.id,title:l.population+"人"}).appendTo(a).wrapAll("<li></li>")})});dlg.updateSize();dlg.updatePosition()})}$("body").delegate("p.expand a","click",function(a){a.preventDefault();$("li.off").show().addClass("on").removeClass("off");$(this).text("收起").parent().removeClass("expand").addClass("contract");dlg.updateSize();dlg.updatePosition()});$("body").delegate("p.contract a","click",function(a){a.preventDefault();$("li.on").hide().addClass("off").removeClass("on");$(this).text("更多").parent().removeClass("contract").addClass("expand");dlg.updateSize();dlg.updatePosition()});$("#edloc,#btnLocation").click(function(a){a.preventDefault();$(".loading").hide();dlg.open();dlg.updateSize();dlg.updatePosition()});
+var dlg=dui.Dialog();dlg.set({title:"选择你的学校",url:"http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/school.html",width:(/device-mobile/i).test(document.documentElement.className)?document.documentElement.offsetWidth*0.9:560,cache:true,callback:function(a,b){$(".selected .loc-type").each(function(){getLocations($(this))});$("body").delegate("a.habitable","click",function(c){c.preventDefault();if(where=="register"){$("#l_tabs").nextAll(".loading").show();$("input[name='loc']").val($(this).attr("id"));$("em#location").html("<strong>"+$(this).text()+"</strong>");$("em#location").next().html("重新选择");b.close();$(".loc-item .validate-error").hide()}else{$.post("https://www.douban.com/j/location/move",{loc:$(this).attr("i"),ck:get_cookie("ck")},function(d){if(d.r){b.close();window.location.reload()}else{alert("请求失败，请重试。")}})}});$("body").delegate("a.unhabitable, a.loc-type","click",function(f){f.preventDefault();var d=$.trim($(this).attr("id")).substring($.trim($(this).attr("id")).indexOf("_")+1);var c="#p_"+d;$("#l_tabs").nextAll(".loading").show();if($(this).hasClass("unhabitable")){getChildren($(this))}if($(this).hasClass("loc-type")){getLocations($(this))}$(this).parent().siblings("li.selected").removeClass("selected");$(this).parent().addClass("selected");$(c).siblings("div").remove();dlg.updateSize();dlg.updatePosition()})}});function getLocations(f){var e=f.attr("id");var c=$.trim(e).substring($.trim(e).indexOf("_")+1);var d="http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/schools/"+c;var b="p_"+c;var g=$("<div></div>").insertAfter(f.parent().parent()).attr("id",b);var a=$("<ul></ul>").appendTo(g).wrapAll("<div></div>");a.parent().addClass("panel");$.getJSON(d,function(i){$("#l_tabs").nextAll(".loading").hide();$.each(i.locations,function(k,j){var l=$('<a href="#"></a>');if(!j.habitable){l.addClass("unhabitable")}else{l.addClass("habitable")}l.text(j.name).attr({id:j.id,title:j.population+"人"}).appendTo(a).wrapAll("<li></li>");if(j.population<=100){l.parent().hide().addClass("off")}});$("<li></li>").css({display:"block",height:"10px"}).insertBefore(a.children("li.off:first"));if(a.children(".off").length){var h=$("<p></p>").addClass("expand");h.appendTo(a);$("<a></a>").appendTo(h).text("更多")}dlg.updateSize();dlg.updatePosition()})}function getChildren(f){var e=f.attr("id");var c=$.trim(e).substring($.trim(e).indexOf("_")+1);var d="http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/schools/"+c;var b="p_"+c;var g=$("<div></div>").insertAfter(f.parent().parent()).attr("id",b);var a=$("<ul></ul>").appendTo(g).wrapAll("<div></div>");a.parent().addClass("panel");$.getJSON(d,function(h){$("#l_tabs").nextAll(".loading").hide();$.each(h.locations,function(k,j){if(!j.has_child){alert("此地区不能作为常居地，请选择其他城市");g.remove();return false}$.each(j.children,function(m,l){var n=$('<a href="#"></a>');if(!l.habitable){n.addClass("unhabitable")}else{n.addClass("habitable")}n.text(l.name).attr({id:l.id,title:l.population+"人"}).appendTo(a).wrapAll("<li></li>")})});dlg.updateSize();dlg.updatePosition()})}$("body").delegate("p.expand a","click",function(a){a.preventDefault();$("li.off").show().addClass("on").removeClass("off");$(this).text("收起").parent().removeClass("expand").addClass("contract");dlg.updateSize();dlg.updatePosition()});$("body").delegate("p.contract a","click",function(a){a.preventDefault();$("li.on").hide().addClass("off").removeClass("on");$(this).text("更多").parent().removeClass("contract").addClass("expand");dlg.updateSize();dlg.updatePosition()});$("#edloc,#btnLocation").click(function(a){a.preventDefault();$(".loading").hide();dlg.open();dlg.updateSize();dlg.updatePosition()});
 });
 })();
 </script>

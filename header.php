@@ -124,7 +124,7 @@ $('#ma-user').bind("selectstart", function () { return false; });
 	   </div>
  <?php  } ?>
 <?php if(!is_user_logged_in() ){ ?>
-	<div class="fright ma-zhuce ma-f" id="ma-zhuce" ><a  href="<?php echo bloginfo('url'); ?>/index.php/register">注册</a></div>
+	<div class="fright ma-zhuce ma-f" id="ma-zhuce" ><a  href="<?php echo bloginfo('url'); ?>/index.php/apply">注册</a></div>
 	<div class="fright ma-zhuce " id="ma-zhuce"><a  href="<?php echo bloginfo('url'); ?>/index.php/login">登录</a></div>
 	
 <?php } ?>
