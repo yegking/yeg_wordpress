@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+
+<?php
+/**
+ * Template Name: 学校活动
+ */?>
+<?php get_header();?>
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory')//获取路径?>/tougao.css" />
+<div id="content">
+<div id="m_left">
+  
+   
+  <?php if(have_posts()) : ;while(have_posts()) : the_post();//判断是否有日志，又则全部显示?>
+ <div class="pic" style="height: 157px" align="left"><!--中间图片的对齐方式等-->
+	<!--绝对定位-->
+    <div class="img-item" style="width: 237px; height: 157px"> <a href="<?php the_permalink();// 显示一篇日志或页面的永久链接/URL地址?>" title="<?php the_title_attribute();//返回当前文章标题?>" target="_blank"> <?php echo post_thumbnail_img(237,157)//自带缩略图功能?> </a>
+      <div class="title-item hide" style="width: 231px; display: none;"><?php echo the_title();?></div><!--鼠标移上去有效果-->
+    </div>
+  </div>
+  <?php endwhile; endif;?>
+  <div class="pagenav">﻿
+    <div class="pagination">
+      <?php pagination(5);?>
+  </div>
+
+
+
+
+
+  </div>
+
+</div>
+<?php get_footer();?>
+</body>
+</html>

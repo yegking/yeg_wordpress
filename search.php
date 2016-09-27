@@ -1,5 +1,5 @@
 <?php get_header();?>
-<!--侧边栏据说-->
+<!--搜索据说-->
 <div id="content">
 <div id="m_left">
   <!--<input type=text value="<?php the_permalink();?>">-->

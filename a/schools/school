@@ -1,0 +1,7 @@
+{"r":true,"locations":[{"name":"四川","has_child":true,"id":"10","habitable":false,"children":[{"id":"101","name":"成都","has_child":true,"habitable":false,"children":[{"id":"1011","name":"电子科技大学成都学院","habitable":true},{"id":"1012","name":"电子科技大学","habitable":true},{"id":"1013","name":"电子科技大学锦城学院","habitable":true},{"id":"1014","name":"四川大学","habitable":true},{"id":"1015","name":"四川师范大学","habitable":true},{"id":"1016","name":"四川农业大学","habitable":true},{"id":"1017","name":"成都理工大学","habitable":true},{"id":"1018","name":"成都中医药大学","habitable":true},{"id":"1019","name":"西南交通大学","habitable":true},{"id":"10110","name":"西南财经大学","habitable":true},{"id":"10111","name":"华西医科大学","habitable":true}]}]}]}
+
+																						
+
+
+
+

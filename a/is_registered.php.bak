@@ -14,6 +14,7 @@ $obj = new stdClass();
 							  $obj->ok=1;
 						  }else{
 							  $obj->ok=0;
+							  $_SESSION["email"]=$_GET['email'];
 							  }
 echo json_encode($obj);
 

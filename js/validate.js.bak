@@ -160,13 +160,13 @@
                                 g && g(k);
                                 j.removeClass("has-process");
                                 this.asyncList.pop();
-                                if (l.length === 0) {
+                                if (l.length === 1) {
                                         this.asyncEndHandle && this.asyncEndHandle()
                                 }
                         },
                         this)));
                         f("body").ajaxError(function() {
-                                alert("远程验证失败！\n请稍候重试或将此问题反馈给我们(help@douban.com)")
+                                alert("远程验证失败！\n请稍候重试或将此问题反馈给我们(help@yeg.com)")
                         })
                 },
                 validate:function(m, l, h) {

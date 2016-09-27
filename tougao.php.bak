@@ -27,6 +27,8 @@
 
 if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
     global $wpdb;
+	global $jiance;
+	$jiance=0;
 	
    // $current_url = 'http://localhost/myblog/wordpress/index.php';   // 注意修改此处的链接地址
 
@@ -37,6 +39,7 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
     // 相比Cookie来验证两次投稿的时间差，读数据库的方式更加安全
     if ( (date_i18n('U') - strtotime($last_post)) < 1) {
        echo "您投稿也太勤快了吧，先歇会儿！";
+	   $jiance=1;
     }
         
     // 表单变量初始化
@@ -51,24 +54,32 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
     // 表单项数据验证
     if ( empty($name) || mb_strlen($name) > 20 ) {
         echo "昵称必须填写，且长度不得超过20字。";
+		$jiance=1;
+		return;
     }
     
     if ( empty($email) || strlen($email) > 60 || !preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email)) {
         echo "Email必须填写，且长度不得超过60字，必须符合Email格式。";
+		$jiance=1;
+		return;
     }
 
 	 if ( empty( $tel) || strlen( $tel) !=11 || !preg_match('/^1(3[0-9]|4[57]|5[012356789]|8[0-9]|7[0678])\d{8}$/',$tel)) {
         echo "请正确填写电话".$tel;
+		$jiance=1;
+		return;
     }
     
    
     
-    if ( empty($content) || mb_strlen($content) > 3000 || mb_strlen($content) < 5) {
-       echo "内容必须填写，且长度不得超过3000字，不得少于5字。";
+    if ( empty($content) || mb_strlen($content) > 500 || mb_strlen($content) < 5) {
+       echo "内容必须填写，且长度不得超过500字，不得少于5字。";
+	   $jiance=1;
+	   return;
     }
 	switch ($title){
 
-		case "打排球" :$picture=140;
+		case "打排球" :$picture=175;
 		break;
 		case "旅游" :$picture=139;
 		break;
@@ -79,7 +90,7 @@ if( isset($_POST['tougao_form']) && $_POST['tougao_form'] == 'send') {
 		case "打羽毛球" :$picture=37;
 		break;
 	}
-    
+    if(!$jiance){
     $post_content = '发起人昵称: '.$name.'<br />Email: '.$email.'<br />电话:'.$tel.'<br />内容:<br />'.$content;
   
 
@@ -115,6 +126,7 @@ set_post_thumbnail($status,$picture);
     else {
        echo "投稿失败！";
     }
+	}
 }
 
 

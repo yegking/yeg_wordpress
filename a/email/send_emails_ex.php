@@ -1,6 +1,6 @@
 <?php
 function send_mail($to, $subject = 'No subject', $body) {
-    $loc_host = "test";                 //发信计算机名，可随意
+    $loc_host = "test1";                 //发信计算机名，可随意
     $smtp_acc = "yegking_dns@163.com";        //Smtp认证的用户名，类似fuweng@im286.com，或者fuweng
     $smtp_pass="CUKdx751";              //Smtp认证的密码，一般等同pop3密码
     $smtp_host="smtp.163.com";    //SMTP服务器地址，类似 smtp.tom.com

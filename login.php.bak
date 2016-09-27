@@ -204,7 +204,7 @@ echo '<p class="error">'.$errors.'</p>';
  <div class="item item-captcha">
       <label>验证码</label>
       <div>
-<img src=home_url(index.php/checkcode) onclick="javascript:this.src="home_url(index.php/checkcode)"'?tm='+Math.random();"  id="captcha_image" alt="captcha" class="captcha_image"/>
+<img src="http://localhost/myblog/wordpress/index.php/checkcode" onclick="javascript:this.src='http://localhost/myblog/wordpress/index.php/checkcode?tm='+Math.random();"  id="captcha_image" alt="captcha" class="captcha_image"/>
 <div class="captcha_block">
   <span id="captcha_block"  class="pl">请输入上图中的字母</span>
   <input type="text" id="captcha_field" name="captcha-solution" tabindex=3  placeholder="验证码" />
@@ -215,7 +215,7 @@ echo '<p class="error">'.$errors.'</p>';
         <p class="remember">　　
         <input type="checkbox" id="remember" name="remember" tabindex="4" value="1" <?php checked($remember); ?>/>
         <label for="remember" class="remember">下次自动登录</label>
-          | <a href="#">忘记密码了</a>
+          | <a href=<?php echo home_url('wp-login.php?action=lostpassword')?>>忘记密码了</a>
        </p>
         </div>
         <div class="item">
@@ -233,7 +233,7 @@ echo '<p class="error">'.$errors.'</p>';
     </div>
         <div>
           <ul  id="side-nav" class="aside">
-           <li class="small">>&nbsp;还没有校跃帐号？<a href="#">立即注册</a></li>
+           <li class="small">>&nbsp;还没有校跃帐号？<a href=<?php echo home_url('index/apply.php')?>>立即注册</a></li>
            <!--<li class="small">>&nbsp;<a href="#">点击下载校跃移动应用</a> </li>-->
         </ul>
         </div>

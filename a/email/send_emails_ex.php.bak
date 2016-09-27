@@ -1,55 +1,52 @@
 <?php
-
-
-
 function send_mail($to, $subject = 'No subject', $body) {
-    $loc_host = "test";                 //·¢ĞÅ¼ÆËã»úÃû£¬¿ÉËæÒâ
-    $smtp_acc = "yegking_dns@163.com";        //SmtpÈÏÖ¤µÄÓÃ»§Ãû£¬ÀàËÆfuweng@im286.com£¬»òÕßfuweng
-    $smtp_pass="CUKdx751";              //SmtpÈÏÖ¤µÄÃÜÂë£¬Ò»°ãµÈÍ¬pop3ÃÜÂë
-    $smtp_host="smtp.163.com";    //SMTP·şÎñÆ÷µØÖ·£¬ÀàËÆ smtp.tom.com
-    $from="yegking_dns@163.com";              //·¢ĞÅÈËEmailµØÖ·£¬ÄãµÄ·¢ĞÅĞÅÏäµØÖ·
+    $loc_host = "test";                 //å‘ä¿¡è®¡ç®—æœºåï¼Œå¯éšæ„
+    $smtp_acc = "yegking_dns@163.com";        //Smtpè®¤è¯çš„ç”¨æˆ·åï¼Œç±»ä¼¼fuweng@im286.comï¼Œæˆ–è€…fuweng
+    $smtp_pass="CUKdx751";              //Smtpè®¤è¯çš„å¯†ç ï¼Œä¸€èˆ¬ç­‰åŒpop3å¯†ç 
+    $smtp_host="smtp.163.com";    //SMTPæœåŠ¡å™¨åœ°å€ï¼Œç±»ä¼¼ smtp.tom.com
+    $from="yegking_dns@163.com";              //å‘ä¿¡äººEmailåœ°å€ï¼Œä½ çš„å‘ä¿¡ä¿¡ç®±åœ°å€
     $headers = "Content-Type: text/plain; charset=\"utf8\"\r\nContent-Transfer-Encoding: base64";
     $lb="\r\n";                         //linebreak
 
-    $hdr = explode($lb,$headers);     //½âÎöºóµÄhdr
+    $hdr = explode($lb,$headers);     //è§£æåçš„hdr
     if($body) {
-        $bdy = preg_replace("/^\./","..",explode($lb,$body));   //½âÎöºóµÄBody
+        $bdy = preg_replace("/^\./","..",explode($lb,$body));   //è§£æåçš„Body
     }
 
     $smtp = array(
-        //1¡¢EHLO£¬ÆÚ´ı·µ»Ø220»òÕß250
+        //1ã€EHLOï¼ŒæœŸå¾…è¿”å›220æˆ–è€…250
         array("EHLO ".$loc_host.$lb,"220,250","HELO error: "),
-        //2¡¢·¢ËÍAuth Login£¬ÆÚ´ı·µ»Ø334
+        //2ã€å‘é€Auth Loginï¼ŒæœŸå¾…è¿”å›334
         array("AUTH LOGIN".$lb,"334","AUTH error:"),
-        //3¡¢·¢ËÍ¾­¹ıBase64±àÂëµÄÓÃ»§Ãû£¬ÆÚ´ı·µ»Ø334
+        //3ã€å‘é€ç»è¿‡Base64ç¼–ç çš„ç”¨æˆ·åï¼ŒæœŸå¾…è¿”å›334
         array(base64_encode($smtp_acc).$lb,"334","AUTHENTIFICATION error : "),
-        //4¡¢·¢ËÍ¾­¹ıBase64±àÂëµÄÃÜÂë£¬ÆÚ´ı·µ»Ø235
+        //4ã€å‘é€ç»è¿‡Base64ç¼–ç çš„å¯†ç ï¼ŒæœŸå¾…è¿”å›235
         array(base64_encode($smtp_pass).$lb,"235","AUTHENTIFICATION error : ")
     );
-    //5¡¢·¢ËÍMail From£¬ÆÚ´ı·µ»Ø250
+    //5ã€å‘é€Mail Fromï¼ŒæœŸå¾…è¿”å›250
     $smtp[] = array("MAIL FROM: <".$from.">".$lb,"250","MAIL FROM error: ");
-    //6¡¢·¢ËÍRcpt To¡£ÆÚ´ı·µ»Ø250
+    //6ã€å‘é€Rcpt Toã€‚æœŸå¾…è¿”å›250
     $smtp[] = array("RCPT TO: <".$to.">".$lb,"250","RCPT TO error: ");
-    //7¡¢·¢ËÍDATA£¬ÆÚ´ı·µ»Ø354
+    //7ã€å‘é€DATAï¼ŒæœŸå¾…è¿”å›354
     $smtp[] = array("DATA".$lb,"354","DATA error: ");
-    //8.0¡¢·¢ËÍFrom
+    //8.0ã€å‘é€From
     $smtp[] = array("From: ".$from.$lb,"","");
-    //8.2¡¢·¢ËÍTo
+    //8.2ã€å‘é€To
     $smtp[] = array("To: ".$to.$lb,"","");
-    //8.1¡¢·¢ËÍ±êÌâ
+    //8.1ã€å‘é€æ ‡é¢˜
     $smtp[] = array("Subject: ".$subject.$lb,"","");
-    //8.3¡¢·¢ËÍÆäËûHeaderÄÚÈİ
+    //8.3ã€å‘é€å…¶ä»–Headerå†…å®¹
     foreach($hdr as $h) {$smtp[] = array($h.$lb,"","");}
-    //8.4¡¢·¢ËÍÒ»¸ö¿ÕĞĞ£¬½áÊøHeader·¢ËÍ
+    //8.4ã€å‘é€ä¸€ä¸ªç©ºè¡Œï¼Œç»“æŸHeaderå‘é€
     $smtp[] = array($lb,"","");
-    //8.5¡¢·¢ËÍĞÅ¼şÖ÷Ìå
+    //8.5ã€å‘é€ä¿¡ä»¶ä¸»ä½“
     if($bdy) {foreach($bdy as $b) {$smtp[] = array(base64_encode($b.$lb).$lb,"","");}}
-    //9¡¢·¢ËÍ¡°.¡±±íÊ¾ĞÅ¼ş½áÊø£¬ÆÚ´ı·µ»Ø250
+    //9ã€å‘é€â€œ.â€è¡¨ç¤ºä¿¡ä»¶ç»“æŸï¼ŒæœŸå¾…è¿”å›250
     $smtp[] = array(".".$lb,"250","DATA(end)error: ");
-    //10¡¢·¢ËÍQuit£¬ÍË³ö£¬ÆÚ´ı·µ»Ø221
+    //10ã€å‘é€Quitï¼Œé€€å‡ºï¼ŒæœŸå¾…è¿”å›221
     $smtp[] = array("QUIT".$lb,"221","QUIT error: ");
 
-    //´ò¿ªsmtp·şÎñÆ÷¶Ë¿Ú
+    //æ‰“å¼€smtpæœåŠ¡å™¨ç«¯å£
     $fp = @fsockopen($smtp_host, 25);
     if (!$fp) echo "Error: Cannot conect to ".$smtp_host."";
     while($result = @fgets($fp, 1024)){
@@ -57,13 +54,13 @@ function send_mail($to, $subject = 'No subject', $body) {
     }
 
     $result_str="";
-    //·¢ËÍsmtpÊı×éÖĞµÄÃüÁî/Êı¾İ
+    //å‘é€smtpæ•°ç»„ä¸­çš„å‘½ä»¤/æ•°æ®
     foreach($smtp as $req){
-        //·¢ËÍĞÅÏ¢
+        //å‘é€ä¿¡æ¯
         @fputs($fp, $req[0]);
-        //Èç¹ûĞèÒª½ÓÊÕ·şÎñÆ÷·µ»ØĞÅÏ¢£¬Ôò
+        //å¦‚æœéœ€è¦æ¥æ”¶æœåŠ¡å™¨è¿”å›ä¿¡æ¯ï¼Œåˆ™
         if($req[1]){
-            //½ÓÊÕĞÅÏ¢
+            //æ¥æ”¶ä¿¡æ¯
             while($result = @fgets($fp, 1024)){
                 if(substr($result,3,1) == " ") { break; }
             };
@@ -72,7 +69,7 @@ function send_mail($to, $subject = 'No subject', $body) {
             }
         }
     }
-    //¹Ø±ÕÁ¬½Ó
+    //å…³é—­è¿æ¥
     @fclose($fp);
     return $result_str;
 }

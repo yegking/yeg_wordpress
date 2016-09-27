@@ -115,16 +115,15 @@ $('#ma-user').bind("selectstart", function () { return false; });
 	<div class="fleft bmsg"><?php bloginfo('description'); //博客描述?></div>
 	
 <?php if(is_user_logged_in() ){  $current_user = wp_get_current_user(); ?>
-       <div class="fright ma-zhuce ma-f " id="ma-user" onclick="menu('menuLists')"><span class="hover"><?php echo $current_user->user_login; ?>的账号<span  class="arrow"></span>　　</span>　
+       <div class="fright ma-zhuce ma-f " id="ma-user" onclick="menu('menuLists')"><span class="hover"><?php echo $current_user->user_login; ?>的账号<span  class="arrow"></span></span>　
 <ul id="menuLists" style="display:none">
-<li><a href="asf">个人中心</a></li>
-<li><a href="asf">个人中心</a></li>
+<li><a href=<?php echo home_url('wp-login.php?action=lostpassword')?>>个人中心</a></li>
 <li><a href="<?php echo  wp_logout_url(home_url()); ?>" title="Logout">退出账号</a></li>
 </ul>
 	   </div>
  <?php  } ?>
 <?php if(!is_user_logged_in() ){ ?>
-	<div class="fright ma-zhuce ma-f" id="ma-zhuce" ><a  href="<?php echo bloginfo('url'); ?>/index.php/register">注册</a></div>
+	<div class="fright ma-zhuce ma-f" id="ma-zhuce" ><a  href="<?php echo bloginfo('url'); ?>/index.php/apply">注册</a></div>
 	<div class="fright ma-zhuce " id="ma-zhuce"><a  href="<?php echo bloginfo('url'); ?>/index.php/login">登录</a></div>
 	
 <?php } ?>

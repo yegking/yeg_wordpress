@@ -518,6 +518,108 @@ if ( !get_option( 'use_smilies' ) )
     );
 }
 
+//自己加的路由
+function add_query_vars($aVars) {
+  $aVars[] = "id"; 
+  return $aVars;
+}
+// hook add_query_vars function into query_vars
+add_filter('query_vars', 'add_query_vars');
+
+function add_rewrite_rules($aRules) {
+  $aNewRules = array('(index.php/checkcode)' => 'checkcode?id=$matches[1]');
+  $aRules = $aNewRules + $aRules;
+  return $aRules;
+}
+
+// hook add_rewrite_rules function into rewrite_rules_array
+add_filter('rewrite_rules_array', 'add_rewrite_rules');
+
+
+
+//为注册添加字段
+add_action( 'user_register', 'pft_registration_save', 10, 1 );
+function pft_registration_save( $user_id ) {
+    if ( isset( $_POST['loc'] ) )
+        update_user_meta($user_id, 'loc', $_POST['loc']);
+}
+
+
+
+
+//在首页中排除某些分类
+function exclude_category_home( $query ) {
+if ( $query->is_home ) {
+$query->set( 'cat', '-10' ); //你要排除的分类ID
+}
+return $query;
+}
+add_filter( 'pre_get_posts', 'exclude_category_home' );
+
+
+
+//屏蔽后台更新模块
+
+function wp_hide_nag() {
+    remove_action( 'admin_notices', 'update_nag', 3 );
+}
+add_action('admin_menu','wp_hide_nag');
+
+//屏蔽后台页脚版本信息
+
+function change_footer_admin () {return '';}
+add_filter('admin_footer_text', 'change_footer_admin', 9999);
+function change_footer_version() {return '';}
+add_filter( 'update_footer', 'change_footer_version', 9999);
+
+//屏蔽后台左上角的LOGO
+function annointed_admin_bar_remove() {
+        global $wp_admin_bar;
+        /* Remove their stuff */
+        $wp_admin_bar->remove_menu('wp-logo');
+}
+add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
+
+
+
+function example_remove_dashboard_widgets() {
+    global $wp_meta_boxes;
+    // 以下这一行代码将删除 "插件" 模块
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+   
+  
+    // 以下这一行代码将删除 "WordPress 开发日志" 模块
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+    // 以下这一行代码将删除 "其它 WordPress 新闻" 模块
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+   
+}
+add_action('wp_dashboard_setup', 'example_remove_dashboard_widgets' );
+
+
+//屏蔽 WP 后台“显示选项”和“帮助”选项卡
+
+function remove_screen_options(){ return false;}
+    add_filter('screen_options_show_screen', 'remove_screen_options');
+    add_filter( 'contextual_help', 'wpse50723_remove_help', 999, 3 );
+    function wpse50723_remove_help($old_help, $screen_id, $screen){
+    $screen->remove_help_tabs();
+    return $old_help;
+}
+
+
+
+
+
+add_shortcode( 'members_only', 'members_only_shortcode' );
+function members_only_shortcode( $atts, $content = null )
+{
+if ( is_user_logged_in() && !empty( $content ) && !is_feed() )
+{
+return $content;
+}
+header('./login.php');
+}
 
 
 

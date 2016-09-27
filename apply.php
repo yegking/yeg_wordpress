@@ -1,7 +1,75 @@
+<?php
+/**还没有产生验证码send_register
+ * Template Name: 注册
+ * 作者：露兜
+ * 博客：http://www.ludou.org/
+ *  
+ *  2013年02月02日 ：
+ *  首个版本
+ */
+session_start();
+if(!empty($_POST['ludou_reg'])){
+	//echo $_POST['loc'];
+	//print($_SESSION["code"]);
+	//echo $_POST['email'];
+	if(($_SESSION["name"]==$_POST['name1'])&&($_SESSION["code"]==$_POST['captcha_solution'])){
+		unset($_SESSION["email1"]);
+		//unset($_SESSION["em"]);
+		unset($_SESSION["name"]);
+//echo "进来了";
+  $error = '';
+  $sanitized_user_login = sanitize_user( $_POST['name1'] );
+
+  $user_email = apply_filters( 'user_registration_email', $_POST['email'] );
+  	$school=$_POST['select'];  
+
+  // Check the username
+  if ( $sanitized_user_login == '' ) {
+    $error .= '<strong>错误</strong>：请输入昵称。<br />';
+  } elseif ( ! validate_username( $sanitized_user_login ) ) {
+    $error .= '<strong>错误</strong>：此昵称包含无效字符，请输入有效的昵称<br />。';
+    $sanitized_user_login = '';
+  } elseif ( username_exists( $sanitized_user_login ) ) {
+    $error .= '<strong>错误</strong>：该昵称已被注册，请再选择一个。<br />';
+	}
+
+  // Check the password
+  if(strlen($_POST['password']) < 8)
+    $error .= '<strong>错误</strong>：密码长度至少8位!<br />';
+
+    if($error == '') {
+    $user_id = wp_create_user( $sanitized_user_login, $_POST['password'], $user_email );
+	 pft_registration_save( $user_id );
+    
+    if ( ! $user_id ) {
+      $error .= sprintf( '<strong>错误</strong>：无法完成您的注册请求... 请联系<a href=\"mailto:%s\">管理员</a>！<br />', get_option( 'admin_email' ) );
+    }
+    else if (!is_user_logged_in()) {
+      $user = get_userdatabylogin($sanitized_user_login);
+      $user_id = $user->ID;
+  
+      // 自动登录
+      wp_set_current_user($user_id, $user_login);
+      wp_set_auth_cookie($user_id);
+      do_action('wp_login', $user_login);
+	  wp_safe_redirect( home_url());
+    }
+  }
+}else{
+	 $error="验证码有误";
+	}
+
+
+}
+$token = md5(uniqid(rand(), true));
+$_SESSION['ludou_token'] = $token;
+
+?>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <title>欢迎加入校跃</title>
 <style>
 html{color:#111;background:#fff}body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote,p{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,i,strong,th,var,optgroup{font-style:normal;font-weight:normal}ul,ol{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:""}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}legend{color:#000}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}input,button,textarea,select{*font-size:100%}pre{white-space:pre-wrap;word-wrap:break-word}a{cursor:pointer}a:link{color:#369;text-decoration:none}a:visited{color:#669;text-decoration:none}a:hover{color:#fff;text-decoration:none;background:#039}a:active{color:#fff;text-decoration:none;background:#f93}a img{border-width:0;vertical-align:middle}body,td,th{font:12px Helvetica,Arial,sans-serif;line-height:1.62}table{border-collapse:collapse;border:0;padding:0;margin:0}wbr:after{content:"\00200B"}textarea{resize:none}input[type=text]:focus,input[type=password]:focus,textarea:focus{outline:0}body{-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}.bn-small,a.bn-cta,.bn-cta input,.bn-flat input{margin:0;border:0;background:transparent;cursor:pointer;-webkit-appearance:none}.lnk-flat,.bn-flat{display:inline-block;*display:inline;zoom:1;overflow:hidden;vertical-align:middle;color:#444;border-width:1px;border-style:solid;border-color:#bbb #bbb #999;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.lnk-flat,.bn-flat input{height:2.1em;padding:0 1.16em 2px;line-height:2.2;*line-height:2.3;font-size:12px;cursor:pointer;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;background:url(https://img3.doubanio.com/f/accounts/23850eee993fea8be43be857dcbaa23961de56aa/pics/bn_ie_bg.png) repeat-x top;background-image:-webkit-gradient(linear,left top,left bottom,from(#fcfcfc),to(#e9e9e9));background-image:-webkit-linear-gradient(top,#fcfcfc,#e9e9e9);background-image:-moz-linear-gradient(top,#fcfcfc,#e9e9e9);background-image:-ms-linear-gradient(top,#fcfcfc,#e9e9e9);background-image:-o-linear-gradient(top,#fcfcfc,#e9e9e9);background-image:linear-gradient(top,#fcfcfc,#e9e9e9)}.lnk-flat:hover,.bn-flat input:hover,.bn-flat-over{color:#333;border-color:#999 #999 #666;background-color:transparent;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8',endColorstr='#dddddd',GradientType=0);background-image:-webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#ddd));background-image:-webkit-linear-gradient(top,#f8f8f8,#ddd);background-image:-moz-linear-gradient(top,#f8f8f8,#ddd);background-image:-ms-linear-gradient(top,#f8f8f8,#ddd);background-image:-o-linear-gradient(top,#f8f8f8,#ddd);background-image:linear-gradient(top,#f8f8f8,#ddd)}.lnk-flat:active,.bn-flat input:active,.bn-flat-active input{color:#333;border-color:#999 #999 #666;background:#ddd}.lnk-flat{line-height:2.2em}.lnk-flat:link,.lnk-flat:visited{text-decoration:none}a.bn-cta,.bn-cta input{display:inline-block;padding:4px 20px;border:1px solid #528641;background:#3fa156;color:#fff;font-size:14px;letter-spacing:2px;*position:relative;*display:inline;zoom:1;*padding:6px 20px 4px;*line-height:1.2;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}a.bn-cta{vertical-align:middle}.bn-cta input{padding:5px 18px;*padding:4px 10px 2px;*vertical-align:middle}a.bn-cta:link,a.bn-cta:visited{color:#fff}.bn-cta input:hover,a.bn-cta:hover{background-color:#4fca6c;border-color:#6aad54}.bn-cta input:active,a.bn-cta:active{background-color:#3fa156;border-color:#528641}.bn-small{padding:1px 2px;border:1px solid #ffabab;color:#ff7676;background:#fdd;height:1.5em\9;line-height:1.56;*line-height:1.4;*position:relative;-webkit-appearance:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}a.bn-small:link,a.bn-small:visited,a.bn-small:hover,a.bn-small:active{padding:0 4px;line-height:1.8;font-size:12px;*line-height:1.3;zoom:1;*height:13px;*overflow:hidden;color:#ff7676;background:#fdd}a.bn-small:hover,a.bn-small:active{border-color:#ff7676;background-color:#ff7676;color:#fdd}.recsubmit .bn-flat{margin:0 10px}.basic-input,.basic-textarea{padding:5px;height:18px;font-size:14px;vertical-align:middle;border:1px solid #c9c9c9;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.basic-input:focus,.basic-textarea:focus{border:1px solid #a9a9a9}.disabled-input{background:#eee;color:#999}.basic-textarea{height:auto}ul,ol{margin:0;padding:0}.wrapper,.header,.footer{width:950px;margin:0 auto 40px;overflow:hidden;zoom:1}.header{margin-bottom:40px}.article{float:left;width:590px;margin-right:50px}.aside{color:#666;overflow:hidden;zoom:1}.aside h2{font-size:15px;color:#072;margin:0 0 12px 0;line-height:150%}.single-nav{padding-top:30px}.sidenav{margin-top:1em}.sidenav li{margin-bottom:1em}h1{display:block;margin:0;padding:0 0 15px 0;font-size:25px;font-weight:bold;color:#494949;line-height:1.1}p{margin:1em 0}.site-nav-logo a:hover{background:0}
@@ -24,13 +92,13 @@ p.agreement { margin-left: 75px; }
 .validate-error { display: none; color: #fe2617 }
 p.validate-error { margin-left: 75px }
 .loc-item .validate-error { line-height: 30px }
-.extra-tips .validate-error , .extra-tips .validate-option { padding-left: 10px; background: url(https://img3.doubanio.com/f/shire/49ede118d7ddeccdbb53cc2bc36248fb36ab6eae/pics/icon/tips_arrow.gif) no-repeat}
+.extra-tips .validate-error , .extra-tips .validate-option { padding-left: 10px; background: url(<?php bloginfo('template_directory')?>/images/tips_arrow.gif) no-repeat}
 .extra-tips .validate-error { background-position: left -52px }
 .extra-tips .validate-option { background-position: left 4px }
 .loc { font-size: 12px; line-height: 30px }
 .tips , #location , .agreement-label { font-size: 12px; color: #808080 }
 #location strong { color: #111111; font-weight: normal }
-.captcha-item span.validate-error { padding-left: 10px; background: url(https://img3.doubanio.com/f/shire/49ede118d7ddeccdbb53cc2bc36248fb36ab6eae/pics/icon/tips_arrow.gif) no-repeat left -52px ; display: none }
+.captcha-item span.validate-error { padding-left: 10px; background: url(<?php bloginfo('template_directory')?>/images/tips_arrow.gif) no-repeat left -52px ; display: none }
 .captcha-img { margin: 2px 6px 0 0; vertical-align: top }
 .captcha-item label { height: 90px }
 .captcha-item .basic-input { width: 95px }
@@ -55,6 +123,14 @@ p.validate-error { margin-left: 75px }
 #footer { color:#999;padding-top:6px;border-top: 1px dashed #ddd; }
 .fright { float:right; }
 .icp { float:left; }
+p.ludou-error {
+  margin: 16px 0;
+  padding: 12px;
+  background-color: #ffebe8;
+  border: 1px solid #c00;
+  font-size: 12px;
+  line-height: 0.1em;
+}
 </style>
 
 
@@ -71,67 +147,6 @@ Do.add('validate', {path: '<?php bloginfo('template_directory')?>/js/validate.js
 
 </head>
 
-<?php
-/**
- * Template Name: 注册
- * 作者：露兜
- * 博客：http://www.ludou.org/
- *  
- *  2013年02月02日 ：
- *  首个版本
- */
-//session_start();
-if(!empty($_POST['ludou_reg'])){
-	
-	if(($_SESSION["email1"]==$_POST['email'])&&($_SESSION["em"]==$_POST['code'])){
-
-	
-  $error = '';
-  $sanitized_user_login = sanitize_user( $_POST['name1'] );
-  $user_email = apply_filters( 'user_registration_email', $_POST['email'] );
-  	$school=$_POST['select'];  
-
-  // Check the username
-  if ( $sanitized_user_login == '' ) {
-    $error .= '<strong>错误</strong>：请输入昵称。<br />';
-  } elseif ( ! validate_username( $sanitized_user_login ) ) {
-    $error .= '<strong>错误</strong>：此昵称包含无效字符，请输入有效的昵称<br />。';
-    $sanitized_user_login = '';
-  } elseif ( username_exists( $sanitized_user_login ) ) {
-    $error .= '<strong>错误</strong>：该昵称已被注册，请再选择一个。<br />';
-  }
-
-
-
-
-  // Check the password
-  if(strlen($_POST['password']) < 8)
-    $error .= '<strong>错误</strong>：密码长度至少8位!<br />';
-    if($error == '') {
-    $user_id = wp_create_user( $sanitized_user_login, $_POST['password'], $user_email );
-
-
-	
-    
-    if ( ! $user_id ) {
-      $error .= sprintf( '<strong>错误</strong>：无法完成您的注册请求... 请联系<a href=\"mailto:%s\">管理员</a>！<br />', get_option( 'admin_email' ) );
-    }
-    else if (!is_user_logged_in()) {
-      $user = get_userdatabylogin($sanitized_user_login);
-      $user_id = $user->ID;
-  
-      // 自动登录
-      wp_set_current_user($user_id, $user_login);
-      wp_set_auth_cookie($user_id);
-      do_action('wp_login', $user_login);
-    }
-  }
-}
-}
-$token = md5(uniqid(rand(), true));
-$_SESSION['ludou_token'] = $token;
-
-?>	
 <?php if(!empty($error)) {
  echo '<p class="ludou-error">'.$error.'</p>';
 }
@@ -143,7 +158,7 @@ if (!is_user_logged_in()) { ?>
   <div class="site-nav single-nav">
     <div class="site-nav-logo">
       <a href="">
-          <img src="https://img3.doubanio.com/dae/accounts/static/pics/douban/lg_account.png" alt="豆瓣">
+          <img src="<?php bloginfo('template_directory')?>/images/1234.png" alt="校跃">
       </a>
     </div>
   </div>
@@ -173,33 +188,33 @@ if (!is_user_logged_in()) { ?>
 		<div class="suggestion">
             <div id="email_suggestion"></div>
         </div>
+
+		<div class="item loc-item">
+                <label>学校</label>
+                <span class="loc">
+                <em id="location">校跃猜你在<strong>电子科技大学成都学院</strong>，没猜对？</em> <a href="#" class="a-btn-location" id="edloc">手动选择</a>
+                </span>
+                
+                <input type="hidden" name="loc" value="1011"/>
+            </div>
+
         <div class="item extra-tips">
             <label>邮箱</label>
             <input id="email" name="email" type="text" class="basic-input" maxlength="60" tabindex="3" value=""/>
         </div>
         <div class="suggestion">
-            <span class="tips">用邮箱接收注册验证码</span>
+            <span class="tips">邮箱用于找回密码</span>
         </div>
 
-            <div class="item loc-item">
-                <label>学校</label>
-                <span class="loc">
-                <em id="location">豆瓣猜你在<strong>兰州</strong>，没猜对？</em> <a href="#" class="a-btn-location" id="edloc">手动选择</a>
-                </span>
-                
-                <input type="hidden" name="loc" value="118381"/>
-            </div>
+           
 
 
-        <div class="item">
-            <label>手机号</label>
-            <input id="verify_phone" name="verify_phone" type="text" class="basic-input" maxlength="60" value="" tabindex="4"/>
-        </div>
+       
        
         <div class="item captcha-item">
             <label>验证码</label>
-            <input id="code" name="code" type="text" class="basic-input small" maxlength="10" tabindex="5"/>
-            <input id="request-phone-code-btn" type="submit" value="获取验证码"/>
+            <!--<input id="code" name="code" type="text" class="basic-input small" maxlength="10" tabindex="5"/>-->
+            <input id="request-phone-code-btn" type="submit" value="点击输入验证码"/>
             <span id="tips-error" class="tips"><em></em></span>
             <span id="tips-info" class="tips"></span>
             <span class="validate-error" id="frm_error"></span>
@@ -216,28 +231,29 @@ if (!is_user_logged_in()) { ?>
         </div>
         <div class="item-submit">
             <label>&nbsp;</label>
-            <input type="submit" name="register" value="注册" disabled="disabled" id="button" class="btn-submit disabled" tabindex="6" title="阅读并同意豆瓣的《使用协议》方可注册。"/>
+            <input type="submit" name="register" value="注册" disabled="disabled" id="button" class="btn-submit disabled" tabindex="6" title="阅读并同意校跃的《使用协议》方可注册。"/>
         </div>
 		 <input type="hidden" name="ludou_reg" value="ok" />
     </form>
 
 
-	  <?php } else {
- echo '<p class="ludou-error">您已注册成功，并已登录！</p>';
-} ?>
+
  
 
     </div>
     <div class="aside">
       
 <ul class="sidenav">
-  <li>&gt;&nbsp;已经拥有豆瓣帐号? <a rel="nofollow" href="/login">直接登录</a></li>
-  <li>&gt;&nbsp;<a href="https://www.douban.com/mobile/">点击下载豆瓣移动应用</a></li>
+  <li>&gt;&nbsp;已经拥有校跃帐号? <a rel="nofollow" href="/login">直接登录</a></li>
+
 
 </ul>
 
     </div>
   </div>
+  	  <?php } else {
+ echo '<p class="ludou-error">您已注册成功，并已登录！</p>';
+} ?>
 
     <div class="footer">
       
@@ -245,19 +261,19 @@ if (!is_user_logged_in()) { ?>
 
 
 <span id="icp" class="fleft gray-link">
-    &copy; 2005－2015 douban.com, all rights reserved
+    &copy; 2016 yegking.com, all rights reserved
 </span>
 
 <span class="fright">
-    <a href="https://www.douban.com/about">关于豆瓣</a>
-    · <a href="https://www.douban.com/jobs">在豆瓣工作</a>
+    <a href="https://www.douban.com/about">关于校跃</a>
+    · <a href="https://www.douban.com/jobs">在校跃工作</a>
     · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
     · <a href="https://www.douban.com/about?policy=disclaimer">免责声明</a>
     
     · <a href="https://www.douban.com/help/">帮助中心</a>
     · <a href="https://developers.douban.com/" target="_blank">开发者</a>
     · <a href="https://www.douban.com/mobile/">移动应用</a>
-    · <a href="https://www.douban.com/partner/">豆瓣广告</a>
+    · <a href="https://www.douban.com/partner/">校跃广告</a>
 </span>
 
 
@@ -274,8 +290,7 @@ if (!is_user_logged_in()) { ?>
 
 Do('dialog', function(){
 
-    (function(){var e,g,f,c,b="captcha_dialog",a="http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/reg_captcha.php";function h(){$.getJSON(a,function(j){//window.alert(j.url);
-	f.attr("src",j.url);g.val(j.token)});captcha_solution_el.val("")}function d(){if(e!==undefined){e.updateSize();e.updatePosition()}}function i(k,j){if(e!==undefined){e.open();h();captcha_solution_el.val("");captcha_solution_el.focus();return}e=dui.Dialog({title:"请输入下图中的字母",url:a,nodeId:b,modal:true,width:340,cache:false, buttons:[{cls:"confirm-btn",text:"确定",method:function(){var m=g.val().trim(),l=captcha_solution_el.val().trim();if(l){e.close();k(m,l)}}}],callback:function(){$.getJSON(a,function(l){e.setContent('                        <div class="captcha-item">                            <input type="hidden" value="'+l.token+'" name="captcha-id">                            <img src="'+l.url+'" class="captcha-img"/>                             <input type="text" name="captcha-solution" class="basic-input captcha" id="captcha" maxlength="10"/>                        </div>');g=e.node.find("input[name='captcha-id']");f=e.node.find("img.captcha-img");captcha_solution_el=e.node.find("input[name='captcha-solution']");c=e.node.find(".confirm-btn input");f.one("load",function(){d()}).each(function(){if(this.complete){$(this).load()}});captcha_solution_el.keypress(function(m){if(m.which==13){m.preventDefault();c.click()}});f.click(h);d();captcha_solution_el.focus()});e.btnClose.click(function(){if(j!==undefined){j()}})}},true);e.open()}window.show_captcha_dialog=i})();
+    (function(){var e,g,f,c,b="captcha_dialog",a="http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/reg_captcha.php";function h(){$.getJSON(a,function(j){f.attr("src",j.url);g.val(j.token)});captcha_solution_el.val("")}function d(){if(e!==undefined){e.updateSize();e.updatePosition()}}function i(k,j){if(e!==undefined){e.open();h();captcha_solution_el.val("");captcha_solution_el.focus();return}e=dui.Dialog({title:"请输入下图中的字母",url:a,nodeId:b,modal:true,width:340,cache:false,dataType:"json",buttons:[{cls:"confirm-btn",text:"确定",method:function(){var m=g.val().trim(),l=captcha_solution_el.val().trim();if(l){e.close();k(m,l)}}}],callback:function(){$.getJSON(a,function(l){e.setContent('                        <div class="captcha-item">                            <input type="hidden" value="'+l.token+'" name="captcha-id">                            <img src="'+l.url+'" class="captcha-img"/>                             <input type="text" name="captcha-solution" class="basic-input captcha" id="captcha" maxlength="10"/>                        </div>');g=e.node.find("input[name='captcha-id']");f=e.node.find("img.captcha-img");captcha_solution_el=e.node.find("input[name='captcha-solution']");c=e.node.find(".confirm-btn input");f.one("load",function(){d()}).each(function(){if(this.complete){$(this).load()}});captcha_solution_el.keypress(function(m){if(m.which==13){m.preventDefault();c.click()}});f.click(h);d();captcha_solution_el.focus()});e.btnClose.click(function(){if(j!==undefined){j()}})}},true);e.open()}window.show_captcha_dialog=i})();
 
     var need_captcha_test = true;
 
@@ -289,10 +304,11 @@ Do('dialog', function(){
         var i = 60, num = $.trim($("#email").val());
 		var e = $('#email').parents('.item').hasClass('has-error');
 		//window.alert(e);
-        if(num === ""||e==true) {
+
+        /*if(num === ""||e==true) {
             displayError($("#request-phone-code-btn")[0], "请输入正确的邮箱");
             return;
-        }
+        }*/
         var data = { phone: num},
             el = $('#request-phone-code-btn');;
         if (need_captcha_test){
@@ -309,17 +325,20 @@ Do('dialog', function(){
 		$("#_err").text('');
         $('#tips-info').text('请稍等...');
         $.post('http://localhost/myblog/wordpress/wp-content/themes/Qingart/a/send_register_verify_code.php', data, function(result) {
+			window.alert(result.r);
+			window.alert(captcha_solution_el.val());
             if (result.r === 0) {
-                el.attr('disabled', 'disabled');
+                /*el.attr('disabled', 'disabled');
                 var timer = setInterval(function () {
                     el.val('重新获取' + ' (' + --i + ')');
                     if (!i) {
                         clearInterval(timer);
                         el.removeAttr("disabled").val('获取验证码');
                     }
-                }, 1000);
+                }, 1000);*/
 				$("#_err").text('');
-                $('#tips-info').text('邮箱验证码已发送');
+               // $('#tips-info').text('邮箱验证码已发送(没有?请点垃圾箱查看或换个邮箱)');
+			   $('#tips-info').text('验证码输入正确');
             } else {
                 if (result.reason === 'captcha_required'){
                     need_captcha_test = true;
@@ -327,7 +346,7 @@ Do('dialog', function(){
                     return
                 } else {
 						$("#_err").text('');
-                    $('#tips-error em').text('邮箱验证码发送失败，请稍后再试');
+                    $('#tips-error em').text('验证失败，请稍后再试');
                 }
                 $('#tips-info').text('');
             }
@@ -479,7 +498,7 @@ Do('validate','dialog',function(){
 
     });
     var optionMsg = {
-        email: '用来登录豆瓣，接收到激活邮件才能完成注册',
+        email: '用来登校跃，接收到激活邮件才能完成注册',
         password: '至少包含字母和数字，最短8个字符，区分大小写',
         name1: '中、英文均可，最长14个英文或7个汉字',
         loc: ''
@@ -489,8 +508,8 @@ Do('validate','dialog',function(){
             isNull: 'Email不能为空',
             invalidFormat: 'Email格式不正确',
             //unavailable: '',
-            unableForTom: '目前暂时不支持使用 tom.com 邮箱注册豆瓣帐号',
-            unableForChongseo: '目前暂时不支持使用 chongseo.cn 邮箱注册豆瓣帐号'
+            unableForTom: '目前暂时不支持使用 tom.com 邮箱注册校跃帐号',
+            unableForChongseo: '目前暂时不支持使用 chongseo.cn 邮箱注册校跃帐号'
         },
         password: {
             isNull: '密码不能为空',
@@ -571,7 +590,25 @@ Do('validate','dialog',function(){
                 return !$.trim(el.val());
             },
             isLong: function(el) {
-                return $.trim(el.val()).replace(/[^\x00-\xff]/g, '豆瓣').length <= 14 ? false : true;
+                return $.trim(el.val()).replace(/[^\x00-\xff]/g, '校跃').length <= 14 ? false : true;
+            },
+				unavailable: function(el,o) {
+                var item = el.parents('.item');
+                o.asyncValidate(el,
+                "<?php echo home_url()?>/index.php/is_name?username=" + $.trim(el.val()),
+                function(j){
+                    if (j.ok){
+						 var s = $.trim(el.val());
+                        el.val(s);
+                        o.displayError(el, '该用户名已注册');
+                        item.addClass('has-error');
+                    }
+					 if (j.ok==2){
+                        el.val(s);
+                        o.displayError(el, '该用户名包含无效字符');
+                        item.addClass('has-error');
+                    }
+                });
             }
         },
         location: {

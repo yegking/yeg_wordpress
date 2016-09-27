@@ -2,11 +2,27 @@
 <!-- body -->
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory')//获取路径?>/tougao.css" />
+<!-- <link rel="stylesheet" href="<?php bloginfo('template_directory')?>/css/tougao.css" media="screen" type="text/css" />-->
+
 
 <script type="text/javascript">
 
 
+function check(){
+$.ajax({ 
+			 type: "GET",
+            url: "http://localhost/myblog/wordpress/index.php/checklogin",
+            dataType: "json",
+            success: function (data) {
+				if(data.ok==0){window.location.href="index.php/login";}
+				else if(data.ok==1){showBg();}
+				else if(data.ok==2){alert("用户正在审核中");}
+                
+            }
+        });
 
+
+}
 //显示灰色 jQuery 遮罩层 
 function showBg(){ 
 var bh = $("body").height(); 
@@ -65,7 +81,7 @@ $("#fullbg,#dialog").hide();
   <?php endwhile; endif;?>
   <div class="pagenav">﻿
     <div class="pagination">
-      <?php pagination(5);?>
+      <?php pagination(5);?><!--分页-->
   </div>
 
 
@@ -80,7 +96,8 @@ $("#fullbg,#dialog").hide();
 <div id="m_right"> 
   <!--分类-->
   <div id="cate_float" style="width:210px;">
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('侧边栏') ) :; endif;//dynamic_sidebar()这个函数是用来检测，当前的小工具区有没有被设定?>
+<!--<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('侧边栏') ) :; endif;//dynamic_sidebar()这个函数是用来检测，当前的小工具区有没有被设定?>-->
+<?php get_sidebar(); ?>  
 
    
       <div class="clear"></div>

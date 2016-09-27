@@ -215,7 +215,7 @@ echo '<p class="error">'.$errors.'</p>';
         <p class="remember">　　
         <input type="checkbox" id="remember" name="remember" tabindex="4" value="1" <?php checked($remember); ?>/>
         <label for="remember" class="remember">下次自动登录</label>
-          | <a href="#">忘记密码了</a>
+          | <a href=<?php echo home_url('wp-login.php?action=lostpassword')?>>忘记密码了</a>
        </p>
         </div>
         <div class="item">
@@ -233,7 +233,7 @@ echo '<p class="error">'.$errors.'</p>';
     </div>
         <div>
           <ul  id="side-nav" class="aside">
-           <li class="small">>&nbsp;还没有校跃帐号？<a href="#">立即注册</a></li>
+           <li class="small">>&nbsp;还没有校跃帐号？<a href=<?php echo home_url('index.php/apply')?>>立即注册</a></li>
            <!--<li class="small">>&nbsp;<a href="#">点击下载校跃移动应用</a> </li>-->
         </ul>
         </div>

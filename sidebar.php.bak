@@ -2,5 +2,13 @@
 <div id="m_right">
 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('侧边栏') ) : endif; ?>
 		
+			<!--分类-->
+			
+
+<?php 
+      
+?>
+
+<?php  ?>
 
 </div>

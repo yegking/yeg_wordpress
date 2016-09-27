@@ -2,10 +2,7 @@
 /**
  * Template Name: 邮箱是否注册
  * 
- * 博客：http://www.ludou.org/
- *  
- *  2013年02月02日 ：
- *  首个版本
+
  */
  session_start();
 $obj = new stdClass();
